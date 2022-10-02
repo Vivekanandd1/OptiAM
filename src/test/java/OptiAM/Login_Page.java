@@ -31,16 +31,14 @@ public class Login_Page  {
 	By Usda_Btn = By.id("OptiAM USDA");
 	By UserNameClick = By.xpath("//span[@class='glyphicon glyphicon-user']");
 	By LogOut = By.xpath("//a[@ng-click='logout()']");
-	By Servicing = By.xpath("(//li[@class='nav-item dropdown'])[1]");
-	By CaseSearch = By.xpath("(//a[contains(text(),'Case Search')])[1]");
-	By CaseNumberBox = By.xpath("//input[@title='LSO_USDA_FHACaseNo341234_title']");
-	By SearchBtn = By.xpath("(//button[@ng-click='Search()'])[2]");
+	
 	
 	public Login_Page(WebDriver driver) {
 		this.driver = driver;
+  	   
 	}
 
-   @BeforeTest
+//   @BeforeTest
 	public void Login()  throws InterruptedException, IOException {
 	
     	File src  = new File("C:\\Users\\Sony\\eclipse-workspace\\Optiam\\Info_Data.xlsx");
@@ -51,10 +49,10 @@ public class Login_Page  {
 	    String UserName = sheet.getRow(2).getCell(1).getStringCellValue();
 	    String Password = sheet.getRow(3).getCell(1).getStringCellValue();
         xsf.close();
-        driver = new ChromeDriver();
-  	    driver.manage().window().maximize();
-  	    driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(20));
-  	   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        driver = new ChromeDriver();
+//  	    driver.manage().window().maximize();
+//  	    driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(20));
+  	   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
         driver.get(Url);
 		driver.findElement(Login_ID).sendKeys(UserName);
 		driver.findElement(PasswordField).sendKeys(Password);
@@ -67,33 +65,14 @@ public class Login_Page  {
 
 	}
    
-   @Test
-   public void CaseSearch() throws IOException, InterruptedException {
-	   
-	   File src  = new File("C:\\Users\\Sony\\eclipse-workspace\\Optiam\\Info_Data.xlsx");
-		FileInputStream fis = new FileInputStream(src);
-		XSSFWorkbook xsf = new XSSFWorkbook(fis);
-	    XSSFSheet sheet = xsf.getSheetAt(0);
-	    String CaseNumber = sheet.getRow(4).getCell(1).getStringCellValue();
-	    xsf.close();
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	   wait.until(ExpectedConditions.elementToBeClickable(Servicing));
-		driver.findElement(Servicing).click();
-		driver.findElement(CaseSearch).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(CaseNumberBox));
-		driver.findElement(CaseNumberBox).sendKeys(CaseNumber);
-		wait.until(ExpectedConditions.elementToBeClickable(SearchBtn));
-		driver.findElement(SearchBtn).click();
-		
-		Thread.sleep(10000);
-	   
-   }
-   
    
 	
-    @AfterTest
+//    @AfterTest
 	public void LogOut() {
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+		 wait.until(ExpectedConditions.elementToBeClickable(UserNameClick));
 		driver.findElement(UserNameClick).click();
+		wait.until(ExpectedConditions.elementToBeClickable(LogOut));
 		driver.findElement(LogOut).click();
 		driver.quit();
 	}

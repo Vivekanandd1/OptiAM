@@ -1,13 +1,10 @@
 package OptiAM;
 
 import java.io.IOException;
-
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -16,10 +13,15 @@ import org.testng.annotations.Test;
 public class StepDefs {
 	WebDriver driver;
 	Login_Page login_page;
+	SearchScreens searchscreens;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+	  	driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(100));
 		login_page  = new Login_Page(driver);
+		searchscreens = new SearchScreens(driver);
 	}
 		
 	
@@ -30,7 +32,9 @@ public class StepDefs {
 	
 	@Test(priority = 1)
 	public void SearchScreens() throws IOException, InterruptedException {
-		login_page.CaseSearch();
+		searchscreens.CaseSearch();
+		searchscreens.CaseAssigned();
+		searchscreens.Forclosure();
 	}
 	
 	@AfterTest
