@@ -19,7 +19,7 @@ public class SearchScreens {
 	By Servicing = By.xpath("(//li[@class='nav-item dropdown'])[1]");
 	By CaseSearch = By.xpath("(//a[contains(text(),'Case Search')])[1]");
 	By CaseNumberBox = By.xpath("//input[@title='LSO_USDA_FHACaseNo341234_title']");
-	By SearchBtn = By.xpath("(//button[@ng-click='Search()'])[2]");
+	By SearchBtn = By.xpath("(//button[@class='btn btn-primary float-right'])[2]");
 	By CaseAssigned = By.xpath("//li[normalize-space()='Case Assigned']");
 	By CassAssignedText = By.xpath("(//div/div[@class='card-title'])[4]");
 	By Forclosure = By.xpath("(//a[@class='nav-link dropdown-toggle cust1'])[5]");
@@ -34,7 +34,7 @@ public class SearchScreens {
 	
 	public void CaseSearch() throws IOException, InterruptedException {
 		   
-		    File src  = new File("C:\\Users\\Sony\\eclipse-workspace\\Optiam\\Info_Data.xlsx");
+		    File src  = new File("C:\\VivekDD\\OptiAM\\Info_Data.xlsx");
 			FileInputStream fis = new FileInputStream(src);
 			XSSFWorkbook xsf = new XSSFWorkbook(fis);
 		    XSSFSheet sheet = xsf.getSheetAt(0);
@@ -65,11 +65,17 @@ public class SearchScreens {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.elementToBeClickable(Forclosure));
 		driver.findElement(Forclosure).click();
-		driver.findElement(FCUncontested);
+		driver.findElement(FCUncontested).click();
 		Thread.sleep(5000);
+		wait.until(ExpectedConditions.elementToBeClickable(Forclosure));
 		driver.findElement(Forclosure).click();
-		driver.findElement(FCContested);
+		wait.until(ExpectedConditions.elementToBeClickable(FCContested));
+		driver.findElement(FCContested).click();
 		Thread.sleep(5000);
+	}
+	
+	public void Bankruptcy() {
+		
 	}
 
 }
