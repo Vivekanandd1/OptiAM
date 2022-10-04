@@ -132,7 +132,7 @@ public class SearchScreens {
 	}
 	
 	public void OtherActivities() {
-		
+		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		
 	}
 	
