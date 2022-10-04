@@ -35,6 +35,9 @@ public class StepDefs {
 		searchscreens.CaseSearch();
 		searchscreens.CaseAssigned();
 		searchscreens.Forclosure();
+		searchscreens.Bankruptcy();
+		searchscreens.ReoScreens();	
+		searchscreens.USDPPS();
 	}
 	
 	@AfterTest

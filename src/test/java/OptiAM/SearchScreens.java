@@ -25,15 +25,37 @@ public class SearchScreens {
 	By Forclosure = By.xpath("(//a[@class='nav-link dropdown-toggle cust1'])[5]");
 	By FCUncontested = By.xpath("(//a[@href='#/ForeclosureUncontested'])[2]");
 	By FCContested = By.xpath("(//a[@href='#/ForeclosureContested'])[2]");
+	By Bankruptcy = By.xpath("(//a[normalize-space()='Bankruptcy'])[2]");
+	By BK7 = By.xpath("//a[normalize-space()='Bankruptcy/Chapter 7']");
+	By BK13 = By.xpath("//a[normalize-space()='Bankruptcy/Chapter 13']");
+	By REO = By.xpath("//a[@class='nav-link dropdown-toggle cust1'][normalize-space()='REO']");
+	By PreReo = By.xpath("(//a[normalize-space()='Pre-REO'])[2]");
+	By USDAReo = By.xpath("(//a[normalize-space()='REO'])[3]");
+	By PostReo = By.xpath("(//a[contains(@class,'dropdown-itemnew')][normalize-space()='Post-REO'])[2]");
+	By USDPPS = By.xpath("(//a[normalize-space()='USDA-PPS'])[2]");
+	By USDAPPS = By.xpath("(//a[normalize-space()='USDA-PPS'])[3]");
+	By OtherActivities = By.xpath("//a[normalize-space()='Other Activities']");
+	By Mediation = By.xpath("(//a[normalize-space()='USDA Mediation'])[2]");
+	By Eviction = By.xpath("(//a[normalize-space()='USDA Eviction'])[2]");
+	By AppraisalLegal = By.xpath("(//a[normalize-space()='USDA Appraisal Legal'])[2]");
+	By AppraisalReo = By.xpath("(//a[normalize-space()='Appraisal Valuation REO'])[2]");
+	By DisputeR = By.xpath("(//a[normalize-space()='Dispute Resolution'])[2]");
+	By GInquiry = By.xpath("(//a[normalize-space()='General Inquiry'])[2]");
+	By Notice = By.xpath("(//a[normalize-space()='Notice'])[2]");
+	By PropertyPreservation = By.xpath("(//a[normalize-space()='Property Preservation'])[2]");
+	By DemandLetter = By.xpath("(//a[normalize-space()='Demand Letters'])[2]");
+	By PreSuitNotice = By.xpath("(//a[normalize-space()='Statutory Pre-Suit Notice'])[2]");
+	By PendingRsrch = By.xpath("(//a[normalize-space()='Pending Research'])[2]");
+	
 	
 	
 	public SearchScreens(WebDriver driver) {
 		this.driver = driver;
+	
 		
 	}
 	
 	public void CaseSearch() throws IOException, InterruptedException {
-		   
 		    File src  = new File("C:\\VivekDD\\OptiAM\\Info_Data.xlsx");
 			FileInputStream fis = new FileInputStream(src);
 			XSSFWorkbook xsf = new XSSFWorkbook(fis);
@@ -49,9 +71,7 @@ public class SearchScreens {
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SearchBtn));
 			wait.until(ExpectedConditions.elementToBeClickable(SearchBtn));
 			driver.findElement(SearchBtn).click();
-			
 			Thread.sleep(5000);
-		   
 	   }
 	
 	public void CaseAssigned() throws InterruptedException {
@@ -74,8 +94,47 @@ public class SearchScreens {
 		Thread.sleep(5000);
 	}
 	
-	public void Bankruptcy() {
+	public void Bankruptcy() throws InterruptedException {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+		wait.until(ExpectedConditions.elementToBeClickable(Bankruptcy));
+		driver.findElement(Bankruptcy).click();
+		driver.findElement(BK7).click();
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.elementToBeClickable(Bankruptcy));
+		driver.findElement(Bankruptcy).click();
+		wait.until(ExpectedConditions.elementToBeClickable(BK13));
+		driver.findElement(BK13).click();
+		Thread.sleep(5000);	
+	}
+	
+	public void ReoScreens() throws InterruptedException {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+		wait.until(ExpectedConditions.elementToBeClickable(REO));
+		driver.findElement(REO).click();
+		driver.findElement(PreReo).click();
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.elementToBeClickable(REO));
+		driver.findElement(REO).click();
+		wait.until(ExpectedConditions.elementToBeClickable(USDAReo));
+		driver.findElement(USDAReo).click();
+		Thread.sleep(5000);	
+		wait.until(ExpectedConditions.elementToBeClickable(REO));
+		driver.findElement(REO).click();
+		wait.until(ExpectedConditions.elementToBeClickable(PostReo));
+		driver.findElement(PostReo).click();
+		Thread.sleep(5000);	
+	}
+    
+	public void USDPPS() throws InterruptedException {
+	driver.findElement(USDPPS).click();
+	driver.findElement(USDAPPS).click();
+	Thread.sleep(5000);
+	}
+	
+	public void OtherActivities() {
+		
 		
 	}
-
+	
+	
 }
