@@ -8,7 +8,9 @@ import java.time.Duration;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -62,7 +64,7 @@ public class SearchScreens {
 		    XSSFSheet sheet = xsf.getSheetAt(0);
 		    String CaseNumber = sheet.getRow(4).getCell(1).getStringCellValue();
 		    xsf.close();
-		    wait = new WebDriverWait(driver, Duration.ofSeconds(200));
+		    wait = new WebDriverWait(driver, Duration.ofSeconds(300));
 		    wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 			driver.findElement(Servicing).click();
 			driver.findElement(CaseSearch).click();
@@ -70,7 +72,11 @@ public class SearchScreens {
 			driver.findElement(CaseNumberBox).sendKeys(CaseNumber);
 			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SearchBtn));
 			wait.until(ExpectedConditions.elementToBeClickable(SearchBtn));
-			driver.findElement(SearchBtn).click();
+			Actions act =  new Actions(driver);
+			act.moveToElement(driver.findElement(SearchBtn)).click().perform();
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			jse.executeScript("window.scrollBy(0,400)");
+			
 			Thread.sleep(5000);
 	   }
 	
@@ -131,8 +137,21 @@ public class SearchScreens {
 	Thread.sleep(5000);
 	}
 	
-	public void OtherActivities() {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+	public void OtherActivities() throws InterruptedException {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
+		wait.until(ExpectedConditions.elementToBeClickable(REO));
+		driver.findElement(REO).click();
+		driver.findElement(PreReo).click();
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.elementToBeClickable(REO));
+		driver.findElement(REO).click();
+		wait.until(ExpectedConditions.elementToBeClickable(USDAReo));
+		driver.findElement(USDAReo).click();
+		Thread.sleep(5000);	
+		wait.until(ExpectedConditions.elementToBeClickable(REO));
+		driver.findElement(REO).click();
+		wait.until(ExpectedConditions.elementToBeClickable(PostReo));
+		driver.findElement(PostReo).click();
 		
 	}
 	
