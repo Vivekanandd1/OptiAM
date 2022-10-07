@@ -74,8 +74,11 @@ public class SearchScreens {
 			wait.until(ExpectedConditions.elementToBeClickable(SearchBtn));
 			Actions act =  new Actions(driver);
 			act.moveToElement(driver.findElement(SearchBtn)).click().perform();
+			
+			Thread.sleep(2000);
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			jse.executeScript("window.scrollBy(0,400)");
+			driver.findElement(SearchBtn).click();
 			
 			Thread.sleep(5000);
 	   }
@@ -137,23 +140,32 @@ public class SearchScreens {
 	Thread.sleep(5000);
 	}
 	
-	public void OtherActivities() throws InterruptedException {
+	public void Mediation() throws InterruptedException {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
-		wait.until(ExpectedConditions.elementToBeClickable(REO));
-		driver.findElement(REO).click();
-		driver.findElement(PreReo).click();
+		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
+		driver.findElement(Mediation).click();
 		Thread.sleep(5000);
-		wait.until(ExpectedConditions.elementToBeClickable(REO));
-		driver.findElement(REO).click();
-		wait.until(ExpectedConditions.elementToBeClickable(USDAReo));
-		driver.findElement(USDAReo).click();
-		Thread.sleep(5000);	
-		wait.until(ExpectedConditions.elementToBeClickable(REO));
-		driver.findElement(REO).click();
-		wait.until(ExpectedConditions.elementToBeClickable(PostReo));
-		driver.findElement(PostReo).click();
-		
 	}
 	
+	public void Eviction() throws InterruptedException {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
+		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
+		driver.findElement(Eviction).click();
+		Thread.sleep(5000);
+	}
+	
+	public void AppraisalLegal() throws InterruptedException {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
+		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
+		driver.findElement(AppraisalLegal).click();
+		Thread.sleep(5000);
+	}
+	
+	public void AppraisalREO() throws InterruptedException {
+		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
+		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
+		driver.findElement(AppraisalReo).click();
+		Thread.sleep(5000);
+	}
 	
 }

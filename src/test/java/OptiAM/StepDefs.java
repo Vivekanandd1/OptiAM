@@ -38,6 +38,11 @@ public class StepDefs {
 		searchscreens.Bankruptcy();
 		searchscreens.ReoScreens();	
 		searchscreens.USDPPS();
+		searchscreens.Mediation();
+		searchscreens.Eviction();
+		searchscreens.AppraisalLegal();
+		searchscreens.AppraisalREO();
+		
 	}
 	
 	@AfterTest
