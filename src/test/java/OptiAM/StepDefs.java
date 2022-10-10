@@ -42,7 +42,13 @@ public class StepDefs {
 		searchscreens.Eviction();
 		searchscreens.AppraisalLegal();
 		searchscreens.AppraisalREO();
-		
+		searchscreens.PropertyPreservation();
+		searchscreens.DisputeResolution();
+		searchscreens.GeneralInquiry();
+		searchscreens.Notice();
+		searchscreens.DemandLetter();
+		searchscreens.StatutoryNotice();
+		searchscreens.PendingResearch();
 	}
 	
 	@AfterTest
