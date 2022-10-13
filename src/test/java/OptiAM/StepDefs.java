@@ -14,6 +14,7 @@ public class StepDefs {
 	WebDriver driver;
 	Login_Page login_page;
 	SearchScreens searchscreens;
+	NewMessaging Newmessaging;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -22,6 +23,7 @@ public class StepDefs {
 	  	driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(100));
 		login_page  = new Login_Page(driver);
 		searchscreens = new SearchScreens(driver);
+		Newmessaging = new NewMessaging(driver);
 	}
 		
 	
@@ -33,27 +35,32 @@ public class StepDefs {
 	@Test(priority = 1)
 	public void SearchScreens() throws IOException, InterruptedException {
 		searchscreens.CaseSearch();
-		searchscreens.CaseAssigned();
-		searchscreens.Forclosure();
-		searchscreens.Bankruptcy();
-		searchscreens.ReoScreens();	
-		searchscreens.USDPPS();
-		searchscreens.Mediation();
-		searchscreens.Eviction();
-		searchscreens.AppraisalLegal();
-		searchscreens.AppraisalREO();
-		searchscreens.PropertyPreservation();
-		searchscreens.DisputeResolution();
-		searchscreens.GeneralInquiry();
-		searchscreens.Notice();
-		searchscreens.DemandLetter();
-		searchscreens.StatutoryNotice();
-		searchscreens.PendingResearch();
+//		searchscreens.CaseAssigned();
+//		searchscreens.Forclosure();
+//		searchscreens.Bankruptcy();
+//		searchscreens.ReoScreens();	
+//		searchscreens.USDPPS();
+//		searchscreens.Mediation();
+//		searchscreens.Eviction();
+//		searchscreens.AppraisalLegal();
+//		searchscreens.AppraisalREO();
+//		searchscreens.PropertyPreservation();
+//		searchscreens.DisputeResolution();
+//		searchscreens.GeneralInquiry();
+//		searchscreens.Notice();
+//		searchscreens.DemandLetter();
+//		searchscreens.StatutoryNotice();
+//		searchscreens.PendingResearch();
 	}
 	
-	@AfterTest
-	public void User_Logout() {
-		login_page.LogOut();
+	@Test(priority = 2)
+	public void NewMessagingSubSystem() {
+		Newmessaging.NewMSIMessaging();
+		
 	}
+//	@AfterTest
+//	public void User_Logout() {
+//		login_page.LogOut();
+//	}
 	}
 
