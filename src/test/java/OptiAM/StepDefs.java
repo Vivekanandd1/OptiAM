@@ -54,7 +54,7 @@ public class StepDefs {
 	}
 	
 	@Test(priority = 2)
-	public void NewMessagingSubSystem() {
+	public void NewMessagingSubSystem() throws InterruptedException, IOException {
 		Newmessaging.NewMSIMessaging();
 		
 	}

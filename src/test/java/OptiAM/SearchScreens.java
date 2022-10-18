@@ -65,6 +65,7 @@ public class SearchScreens {
 		    String CaseNumber = sheet.getRow(4).getCell(1).getStringCellValue();
 		    xsf.close();
 		    wait = new WebDriverWait(driver, Duration.ofSeconds(300));
+		    wait.until(ExpectedConditions.presenceOfElementLocated(Servicing));
 		    wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 			driver.findElement(Servicing).click();
 			driver.findElement(CaseSearch).click();
