@@ -41,7 +41,7 @@ public class Login_Page  {
 //   @BeforeTest
 	public void Login()  throws InterruptedException, IOException {
 	
-    	File src  = new File("C:\\VivekDD\\OptiAM\\Info_Data.xlsx");
+    	File src  = new File("C:\\Users\\Sony\\eclipse-workspace\\Optiam\\Info_Data.xlsx");
 		FileInputStream fis = new FileInputStream(src);
 		XSSFWorkbook xsf = new XSSFWorkbook(fis);
 	    XSSFSheet sheet = xsf.getSheetAt(0);
@@ -50,7 +50,7 @@ public class Login_Page  {
 	    String Password = sheet.getRow(3).getCell(1).getStringCellValue();
         xsf.close();
 
-  	   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+  	   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(400));
         driver.get(Url);
 		driver.findElement(Login_ID).sendKeys(UserName);
 		driver.findElement(PasswordField).sendKeys(Password);

@@ -3,7 +3,9 @@ package OptiAM;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,7 +27,7 @@ public class NewMessaging {
 	}
 	
 	public void NewMSIMessaging() {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(200));
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		wait.until(ExpectedConditions.presenceOfElementLocated(More));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
@@ -36,9 +38,12 @@ public class NewMessaging {
 		driver.findElement(NewMSI).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(MsiOpen));
 		wait.until(ExpectedConditions.elementToBeClickable(MsiOpen));
-		
+		WebElement elem = driver.findElement(MsiOpen);//u may use by id or by class as ur wish
+		String makeVisible = "arguments[0].style.visibility='visible';";
+		((JavascriptExecutor) driver).executeScript(makeVisible, elem);
+		elem.click();
 		//need to switch on frame
-		driver.findElement(MsiOpen).click();
+//		driver.findElement(MsiOpen).click();
 		
 	}
 
