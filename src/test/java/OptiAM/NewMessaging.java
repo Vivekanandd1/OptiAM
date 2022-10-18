@@ -29,8 +29,13 @@ public class NewMessaging {
 		this.driver = driver;
 	}
 	
+<<<<<<< HEAD
 	public void NewMSIMessaging() throws InterruptedException, IOException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(300));
+=======
+	public void NewMSIMessaging() {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+>>>>>>> df32b8620de5c13891a8031228951ed1c0d3c923
 		wait.until(ExpectedConditions.presenceOfElementLocated(More));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
@@ -39,6 +44,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
+<<<<<<< HEAD
 		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 		wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
 		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
@@ -47,6 +53,17 @@ public class NewMessaging {
 	    executor.executeScript("arguments[0].click();", element);
 	    Thread.sleep(1000);
 	    Runtime.getRuntime().exec("C:\\Users\\QA\\Desktop\\dump\\AutoitUploadScript.exe");
+=======
+		wait.until(ExpectedConditions.presenceOfElementLocated(MsiOpen));
+		wait.until(ExpectedConditions.elementToBeClickable(MsiOpen));
+		WebElement elem = driver.findElement(MsiOpen);//u may use by id or by class as ur wish
+		String makeVisible = "arguments[0].style.visibility='visible';";
+		((JavascriptExecutor) driver).executeScript(makeVisible, elem);
+		elem.click();
+		//need to switch on frame
+//		driver.findElement(MsiOpen).click();
+		
+>>>>>>> df32b8620de5c13891a8031228951ed1c0d3c923
 	}
 
 }
