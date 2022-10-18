@@ -58,18 +58,13 @@ public class SearchScreens {
 	}
 	
 	public void CaseSearch() throws IOException, InterruptedException {
-		    File src  = new File("C:\\Users\\Sony\\eclipse-workspace\\Optiam\\Info_Data.xlsx");
+		    File src  = new File("C:\\VivekDD\\OptiAM\\Info_Data.xlsx");
 			FileInputStream fis = new FileInputStream(src);
 			XSSFWorkbook xsf = new XSSFWorkbook(fis);
 		    XSSFSheet sheet = xsf.getSheetAt(0);
 		    String CaseNumber = sheet.getRow(4).getCell(1).getStringCellValue();
 		    xsf.close();
-<<<<<<< HEAD
-		    wait = new WebDriverWait(driver, Duration.ofSeconds(300));
-		    wait.until(ExpectedConditions.presenceOfElementLocated(Servicing));
-=======
 		    wait = new WebDriverWait(driver, Duration.ofSeconds(500));
->>>>>>> df32b8620de5c13891a8031228951ed1c0d3c923
 		    wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 			driver.findElement(Servicing).click();
 			driver.findElement(CaseSearch).click();
@@ -79,12 +74,10 @@ public class SearchScreens {
 			wait.until(ExpectedConditions.elementToBeClickable(SearchBtn));
 			Actions act =  new Actions(driver);
 			act.moveToElement(driver.findElement(SearchBtn)).click().perform();
-			
 			Thread.sleep(2000);
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
 			jse.executeScript("window.scrollBy(0,400)");
 			driver.findElement(SearchBtn).click();
-			
 			Thread.sleep(5000);
 	   }
 	
