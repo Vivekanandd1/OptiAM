@@ -44,11 +44,17 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 		wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
 		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
-		WebElement element = driver.findElement(OpenBTN);
+		WebElement element1 = driver.findElement(OpenBTN);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
-	    executor.executeScript("arguments[0].click();", element);
-	    Thread.sleep(1000);
+	    executor.executeScript("arguments[0].click();", element1);
+//	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\01.PropertyPreservationPI.exe");
 	    Runtime.getRuntime().exec("C:\\Users\\QA\\Desktop\\dump\\AutoitUploadScript.exe");
+	    Thread.sleep(2000);
+
+	    WebElement element2 = driver.findElement(MSIsend);
+	    JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+	    executor1.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(1000);
 
 	}
 
