@@ -29,7 +29,7 @@ public class AutoIt {
     // below line execute the AutoIT script .
     Thread.sleep(3000);
 
-    Runtime.getRuntime().exec("C:\\Users\\QA\\Desktop\\dump\\AutoitUploadScript.exe");
+    Runtime.getRuntime().exec("C:\\Users\\Sony\\eclipse-workspace\\Optiam\\Test It\\SamplePDF.exe");
     
     Thread.sleep(3000);
     
