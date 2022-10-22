@@ -2,8 +2,6 @@ package OptiAM;
 
 import java.io.IOException;
 import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -31,7 +29,7 @@ public class NewMessaging {
 	
 
 
-	public void NewMSIMessaging() throws InterruptedException, IOException {
+	public void PropertyPreservationPI100() throws InterruptedException, IOException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		wait.until(ExpectedConditions.presenceOfElementLocated(More));
 		driver.findElement(More).click();
@@ -47,15 +45,31 @@ public class NewMessaging {
 		WebElement element1 = driver.findElement(OpenBTN);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
-//	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\01.PropertyPreservationPI.exe");
-	    Runtime.getRuntime().exec("C:\\Users\\QA\\Desktop\\dump\\AutoitUploadScript.exe");
 	    Thread.sleep(2000);
-
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\01.PropertyPreservationPI.exe");
+	    Thread.sleep(2000);
 	    WebElement element2 = driver.findElement(MSIsend);
-	    JavascriptExecutor executor1 = (JavascriptExecutor)driver;
-	    executor1.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(1000);
-
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	    }
+	
+	public void PropertyPreservationPI200() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewMSI).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(MSIsend);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\02.PropertyPreservationPI.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
 	}
 
 }

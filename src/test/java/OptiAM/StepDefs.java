@@ -55,8 +55,8 @@ public class StepDefs {
 	
 	@Test(priority = 2)
 	public void NewMessagingSubSystem() throws InterruptedException, IOException {
-		Newmessaging.NewMSIMessaging();
-		
+		Newmessaging.PropertyPreservationPI100();
+		Newmessaging.PropertyPreservationPI200();
 	}
 //	@AfterTest
 //	public void User_Logout() {
