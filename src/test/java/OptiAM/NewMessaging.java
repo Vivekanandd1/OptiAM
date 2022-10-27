@@ -70,6 +70,51 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\02.PropertyPreservationPI.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void PropertyPreservationPGM100() throws InterruptedException, IOException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		wait.until(ExpectedConditions.presenceOfElementLocated(More));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewMSI).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
+		wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
+		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
+		WebElement element1 = driver.findElement(OpenBTN);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00250.Propety Preservation General Maintenance\\01.PropertyPreservationPGM.exe");
+	    Thread.sleep(2000);
+	    WebElement element2 = driver.findElement(MSIsend);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	    }
+	
+	public void PropertyPreservationPGM200() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewMSI).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(MSIsend);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00250.Propety Preservation General Maintenance\\02.PropertyPreservationPGM.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
 	}
 
 }
