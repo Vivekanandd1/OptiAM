@@ -22,6 +22,7 @@ public class NewMessaging {
 	  By NewMSI = By.xpath("(//a[normalize-space()='MSI Messaging Sub Systems'])");
 	  By NewDeval = By.xpath("//a[normalize-space()='Deval Messaging Sub Systems']");
 	  By NewClassValution = By.xpath("//a[normalize-space()='Class Valuation Messaging Sub Systems']");
+	  By NewRadian = By.xpath("//a[normalize-space()='Radian Messaging Sub Systems']");
 	  By OpenBTN = By.id("selectFile");
 	  By sendBtn = By.xpath("//input[@value='Send To Hub']");
 	
@@ -312,6 +313,46 @@ public class NewMessaging {
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00500.Appraisal Valuation Reo From Class Valuation\\01.ClassValutionRA500.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ReoR0110() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewRadian).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\01.ReoR110.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ReoR0120() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewRadian).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\02.ReoR120.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
 	    Thread.sleep(5000);
