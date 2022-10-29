@@ -60,6 +60,13 @@ public class StepDefs {
 		Newmessaging.PropertyPreservationPGM100();
 		Newmessaging.PropertyPreservationPGM200();
 		Newmessaging.ForeclosureUncontestedUF100();
+		Newmessaging.ForeclosureUncontestedUF150();
+		Newmessaging.ForeclosureUncontestedUF200();
+		Newmessaging.ForeclosureUncontestedUF250();
+		Newmessaging.ForeclosureUncontestedUF300();
+		Newmessaging.ForeclosureUncontestedUF350();
+		Newmessaging.ForeclosureUncontestedUF400();
+		Newmessaging.ForeclosureUncontestedUF500();
 	}
 //	@AfterTest
 //	public void User_Logout() {

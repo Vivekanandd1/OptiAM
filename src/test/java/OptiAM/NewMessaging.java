@@ -21,6 +21,7 @@ public class NewMessaging {
 	  By iForm  = By.xpath("(//form[@role='form'])[1]");
 	  By NewMSI = By.xpath("(//a[normalize-space()='MSI Messaging Sub Systems'])");
 	  By NewDeval = By.xpath("//a[normalize-space()='Deval Messaging Sub Systems']");
+	  By NewClassValution = By.xpath("//a[normalize-space()='Class Valuation Messaging Sub Systems']");
 	  By OpenBTN = By.id("selectFile");
 	  By sendBtn = By.xpath("//input[@value='Send To Hub']");
 	
@@ -132,6 +133,185 @@ public class NewMessaging {
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\01.FCUF100.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ForeclosureUncontestedUF150() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\02.FCUF150.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	public void ForeclosureUncontestedUF200() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\03.FCUF200.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ForeclosureUncontestedUF250() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\04.FCUF250.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ForeclosureUncontestedUF300() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\05.FCUF300.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ForeclosureUncontestedUF350() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\06.FCUF350.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ForeclosureUncontestedUF400() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\07.FCUF400.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ForeclosureUncontestedUF500() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewDeval).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\08.FCUF500.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void PreReoP500() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewMSI).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00400.Pre-Reo from MSI\\01.PreReoP500.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
+	
+	public void ClassValuationRA500() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewClassValution).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00500.Appraisal Valuation Reo From Class Valuation\\01.ClassValutionRA500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
 	    Thread.sleep(5000);
