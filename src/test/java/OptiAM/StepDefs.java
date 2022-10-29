@@ -67,6 +67,17 @@ public class StepDefs {
 		Newmessaging.ForeclosureUncontestedUF350();
 		Newmessaging.ForeclosureUncontestedUF400();
 		Newmessaging.ForeclosureUncontestedUF500();
+		Newmessaging.PreReoP500();
+		Newmessaging.ClassValuationRA500();
+		Newmessaging.ReoR0110();
+		Newmessaging.ReoR0120();
+		Newmessaging.ReoR0130();
+		Newmessaging.ReoR0140();
+		Newmessaging.ReoR0150();
+		Newmessaging.ReoR0160();
+		Newmessaging.ReoR0180();
+		Newmessaging.ReoR0500();
+		
 	}
 //	@AfterTest
 //	public void User_Logout() {
