@@ -417,4 +417,24 @@ public class NewMessaging {
 	    executor.executeScript("arguments[0].click();", element2);
 	    Thread.sleep(5000);
 	}
+	
+	public void ReoR0160() throws IOException, InterruptedException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+		driver.findElement(Test).click();
+		Actions act = new Actions(driver);
+		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		driver.findElement(NewRadian).click();
+		WebElement element1 = driver.findElement(OpenBTN);
+		WebElement element2 = driver.findElement(sendBtn);
+	    JavascriptExecutor executor = (JavascriptExecutor)driver;
+	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
+	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\06.ReoR160.exe");
+	    Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", element2);
+	    Thread.sleep(5000);
+	}
 }
