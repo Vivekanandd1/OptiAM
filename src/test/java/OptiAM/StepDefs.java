@@ -4,9 +4,14 @@ import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 
 
 
@@ -15,6 +20,16 @@ public class StepDefs {
 	Login_Page login_page;
 	SearchScreens searchscreens;
 	NewMessaging Newmessaging;
+	CaseBoarding Caseboading;
+//	static ExtentTest test;
+//	static ExtentReports report;
+//	
+//	@BeforeClass
+//	public static void startTest()
+//	{
+//	report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
+//	test = report.startTest("ExtentDemo");
+//	}
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -24,6 +39,7 @@ public class StepDefs {
 		login_page  = new Login_Page(driver);
 		searchscreens = new SearchScreens(driver);
 		Newmessaging = new NewMessaging(driver);
+		Caseboading = new CaseBoarding(driver);
 	}
 		
 	
@@ -54,7 +70,13 @@ public class StepDefs {
 	}
 	
 	@Test(priority = 2)
-	public void NewMessagingSubSystem() throws InterruptedException, IOException {
+	public void CaseBoarding() throws InterruptedException, IOException {
+		Caseboading.Translation();
+	}
+	
+	
+//	@Test(priority = 2)
+	/*public void NewMessagingSubSystem() throws InterruptedException, IOException {
 		Newmessaging.PropertyPreservationPI100();
 		Newmessaging.PropertyPreservationPI200();
 		Newmessaging.PropertyPreservationPGM100();
@@ -78,10 +100,14 @@ public class StepDefs {
 		Newmessaging.ReoR0180();
 		Newmessaging.ReoR0500();
 		
-	}
+	}*/
+	
 //	@AfterTest
 //	public void User_Logout() {
 //		login_page.LogOut();
 //	}
-	}
+	
+
+
+}
 
