@@ -45,6 +45,7 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 		wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
 		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
@@ -65,6 +66,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -89,6 +91,7 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 		wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
 		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
@@ -109,6 +112,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -128,6 +132,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -150,6 +155,7 @@ public class NewMessaging {
 		driver.findElement(NewDeval).click();
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
+		Thread.sleep(2000);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
@@ -167,6 +173,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -187,6 +194,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -207,6 +215,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -225,6 +234,7 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		Actions act = new Actions(driver);
+		Thread.sleep(2000);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		WebElement element1 = driver.findElement(OpenBTN);
@@ -247,6 +257,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -267,6 +278,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -275,7 +287,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\08.FCUF500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	}
 	
 	public void PreReoP500() throws IOException, InterruptedException {
@@ -287,6 +299,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -295,7 +308,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00400.Pre-Reo from MSI\\01.PreReoP500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	}
 	
 	public void ClassValuationRA500() throws IOException, InterruptedException {
@@ -307,6 +320,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewClassValution).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -315,7 +329,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00500.Appraisal Valuation Reo From Class Valuation\\01.ClassValutionRA500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	}
 	
 	public void ReoR0110() throws IOException, InterruptedException {
@@ -327,6 +341,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -347,6 +362,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -367,6 +383,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -387,6 +404,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -407,6 +425,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -427,6 +446,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -447,6 +467,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -467,6 +488,7 @@ public class NewMessaging {
 		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
+		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
@@ -475,6 +497,6 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\08.ReoR500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	}
 }
