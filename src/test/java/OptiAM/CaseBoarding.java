@@ -28,6 +28,7 @@ public class CaseBoarding {
 		WebElement element1 = driver.findElement(FileSelection);
 	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
+	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00100.Translation File\\01.TransalationFile.exe");
 	    Thread.sleep(2000);
 	    WebElement element2 = driver.findElement(UploadBtn);

@@ -1,5 +1,7 @@
 package OptiAM;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
 import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
@@ -20,16 +22,8 @@ public class StepDefs {
 	Login_Page login_page;
 	SearchScreens searchscreens;
 	NewMessaging Newmessaging;
-	CaseBoarding Caseboading;
-//	static ExtentTest test;
-//	static ExtentReports report;
-//	
-//	@BeforeClass
-//	public static void startTest()
-//	{
-//	report = new ExtentReports(System.getProperty("user.dir")+"ExtentReportResults.html");
-//	test = report.startTest("ExtentDemo");
-//	}
+	CaseBoarding Caseborading;
+
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -39,7 +33,7 @@ public class StepDefs {
 		login_page  = new Login_Page(driver);
 		searchscreens = new SearchScreens(driver);
 		Newmessaging = new NewMessaging(driver);
-		Caseboading = new CaseBoarding(driver);
+		Caseborading = new CaseBoarding(driver);
 	}
 		
 	
@@ -71,7 +65,7 @@ public class StepDefs {
 	
 	@Test(priority = 2)
 	public void CaseBoarding() throws InterruptedException, IOException {
-		Caseboading.Translation();
+		Caseborading.Translation();
 	}
 	
 	
