@@ -49,7 +49,6 @@ public class StepDefs {
 	
 	@Test(priority = 2)
 	public void SearchScreens() throws IOException, InterruptedException {
-		searchscreens.CaseSearch();
 		searchscreens.CaseAssigned();
 		searchscreens.Forclosure();
 		searchscreens.Bankruptcy();
@@ -66,6 +65,7 @@ public class StepDefs {
 		searchscreens.DemandLetter();
 		searchscreens.StatutoryNotice();
 		searchscreens.PendingResearch();
+		searchscreens.CaseSearch();
 	}
 	
 	
