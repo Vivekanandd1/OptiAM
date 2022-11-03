@@ -7,11 +7,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CaseBoarding {
 	
 	private WebDriver driver;
-	
+	WebDriverWait wait;
 	By Servicing = By.xpath("(//li[@class='nav-item dropdown'])[1]");
 	By Translation = By.xpath("(//a[@href='#/TranslationSystemUpload'])[1]");
 	By FileSelection = By.xpath("//input[@name='file_Uploader']");
@@ -23,6 +25,8 @@ public class CaseBoarding {
 	}
 	
 	public void Translation() throws InterruptedException, IOException {
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Servicing));
 		driver.findElement(Servicing).click();
 		driver.findElement(Translation).click();
 		WebElement element1 = driver.findElement(FileSelection);
