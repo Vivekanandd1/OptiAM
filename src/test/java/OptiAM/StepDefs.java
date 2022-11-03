@@ -2,6 +2,10 @@ package OptiAM;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
@@ -38,7 +42,7 @@ public class StepDefs {
 		
 	
 	@Test(priority = 0)
-	public void User_Login() throws InterruptedException, IOException {
+	public void User_Login() throws InterruptedException, IOException, AWTException {
 		login_page.Login();
 	}
 	

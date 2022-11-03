@@ -1,5 +1,8 @@
 package OptiAM;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -39,7 +42,7 @@ public class Login_Page  {
 	}
 
 //   @BeforeTest
-	public void Login()  throws InterruptedException, IOException {
+	public void Login()  throws InterruptedException, IOException, AWTException {
 	
     	File src  = new File("C:\\VivekDD\\OptiAM\\Info_Data.xlsx");
 		FileInputStream fis = new FileInputStream(src);
@@ -59,7 +62,13 @@ public class Login_Page  {
 		driver.findElement(LoanProgramSelection).click();
 		wait.until(ExpectedConditions.elementToBeClickable(Usda_Btn));
 		driver.findElement(Usda_Btn).click();
-		 
+		Robot robot = new Robot();
+		for (int i = 0; i < 3; i++) {
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_SUBTRACT);
+			robot.keyRelease(KeyEvent.VK_SUBTRACT);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			}
 
 	}
    
