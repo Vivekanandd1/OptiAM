@@ -75,7 +75,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\02.PropertyPreservationPI.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	}
 	
 	public void PropertyPreservationPGM100() throws InterruptedException, IOException {
@@ -121,7 +121,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00250.Propety Preservation General Maintenance\\02.PropertyPreservationPGM.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(5000);
+	    Thread.sleep(10000);
 	}
 	public void ForeclosureUncontestedUF100() throws IOException, InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(500));

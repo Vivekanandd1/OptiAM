@@ -37,7 +37,7 @@ public class CaseBoarding {
 	    Thread.sleep(2000);
 	    WebElement element2 = driver.findElement(UploadBtn);
 	    executor.executeScript("arguments[0].click();", element2);
-		
+	    Thread.sleep(5000);
 	}
 	
 

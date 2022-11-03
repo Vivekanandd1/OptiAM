@@ -66,7 +66,8 @@ public class Login_Page  {
    
 	
 //    @AfterTest
-	public void LogOut() {
+	public void LogOut() throws InterruptedException {
+		Thread.sleep(3000);
 		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		 wait.until(ExpectedConditions.elementToBeClickable(UserNameClick));
 		driver.findElement(UserNameClick).click();
