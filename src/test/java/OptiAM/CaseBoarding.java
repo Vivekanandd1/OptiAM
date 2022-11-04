@@ -22,10 +22,10 @@ public class CaseBoarding {
 	public CaseBoarding(WebDriver driver) {
 		this.driver=driver;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 	}
 	
-	public void Translation() throws InterruptedException, IOException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+	public void Translation() throws InterruptedException, IOException {	
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Servicing));
 		driver.findElement(Servicing).click();
 		driver.findElement(Translation).click();

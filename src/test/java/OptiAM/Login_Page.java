@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
 public class Login_Page  {
 	
 	private WebDriver driver;
-	
+	WebDriverWait wait;
 	
 	By Login_ID = By.name("user_id");
 	By PasswordField = By.name("password");
@@ -38,7 +38,7 @@ public class Login_Page  {
 	
 	public Login_Page(WebDriver driver) {
 		this.driver = driver;
-  	   
+		wait = new WebDriverWait(driver, Duration.ofSeconds(500));
 	}
 
 //   @BeforeTest
@@ -52,8 +52,6 @@ public class Login_Page  {
 	    String UserName = sheet.getRow(2).getCell(1).getStringCellValue();
 	    String Password = sheet.getRow(3).getCell(1).getStringCellValue();
         xsf.close();
-
-  	   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(400));
         driver.get(Url);
 		driver.findElement(Login_ID).sendKeys(UserName);
 		driver.findElement(PasswordField).sendKeys(Password);
@@ -69,7 +67,6 @@ public class Login_Page  {
 			robot.keyRelease(KeyEvent.VK_SUBTRACT);
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			}
-
 	}
    
    
@@ -77,11 +74,12 @@ public class Login_Page  {
 //    @AfterTest
 	public void LogOut() throws InterruptedException {
 		Thread.sleep(3000);
-		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		 wait.until(ExpectedConditions.elementToBeClickable(UserNameClick));
 		driver.findElement(UserNameClick).click();
 		wait.until(ExpectedConditions.elementToBeClickable(LogOut));
+		Thread.sleep(1000);
 		driver.findElement(LogOut).click();
+		Thread.sleep(2000);
 		driver.quit();
 	}
 }

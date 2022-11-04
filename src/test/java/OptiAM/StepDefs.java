@@ -98,9 +98,10 @@ public class StepDefs {
 		Newmessaging.ReoR0150();
 		Newmessaging.ReoR0160();
 		Newmessaging.ReoR0180();
-		Newmessaging.ReoR0500();
-		
+		Newmessaging.ReoR0500();	
 	}
+	
+	
 	@AfterTest
 	public void User_Logout() throws InterruptedException {
 		login_page.LogOut();

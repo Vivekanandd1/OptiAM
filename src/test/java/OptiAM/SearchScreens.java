@@ -53,6 +53,7 @@ public class SearchScreens {
 	
 	public SearchScreens(WebDriver driver) {
 		this.driver = driver;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(500));
 	
 		
 	}
@@ -64,7 +65,6 @@ public class SearchScreens {
 		    XSSFSheet sheet = xsf.getSheetAt(0);
 		    String CaseNumber = sheet.getRow(4).getCell(1).getStringCellValue();
 		    xsf.close();
-		    wait = new WebDriverWait(driver, Duration.ofSeconds(500));
 		    wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 			driver.findElement(Servicing).click();
 			driver.findElement(CaseSearch).click();
@@ -82,14 +82,12 @@ public class SearchScreens {
 	   }
 	
 	public void CaseAssigned() throws InterruptedException {
-		 wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		 wait.until(ExpectedConditions.elementToBeClickable(CaseAssigned));
 		 driver.findElement(CaseAssigned).click();
 		 Thread.sleep(5000);
 	}
 	
 	public void Forclosure() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.elementToBeClickable(Forclosure));
 		driver.findElement(Forclosure).click();
 		driver.findElement(FCUncontested).click();
@@ -102,7 +100,6 @@ public class SearchScreens {
 	}
 	
 	public void Bankruptcy() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.elementToBeClickable(Bankruptcy));
 		driver.findElement(Bankruptcy).click();
 		driver.findElement(BK7).click();
@@ -115,7 +112,6 @@ public class SearchScreens {
 	}
 	
 	public void ReoScreens() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(100));
 		wait.until(ExpectedConditions.elementToBeClickable(REO));
 		driver.findElement(REO).click();
 		driver.findElement(PreReo).click();
@@ -139,7 +135,6 @@ public class SearchScreens {
 	}
 	
 	public void Mediation() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(Mediation).click();
@@ -147,7 +142,6 @@ public class SearchScreens {
 	}
 	
 	public void Eviction() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(Eviction).click();
@@ -155,7 +149,6 @@ public class SearchScreens {
 	}
 	
 	public void AppraisalLegal() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(AppraisalLegal).click();
@@ -163,7 +156,6 @@ public class SearchScreens {
 	}
 	
 	public void AppraisalREO() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(AppraisalReo).click();
@@ -171,7 +163,6 @@ public class SearchScreens {
 	}
 	
 	public void PropertyPreservation() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(PropertyPreservation).click();
@@ -179,7 +170,6 @@ public class SearchScreens {
 	}
 	
 	public void DisputeResolution() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(DisputeR).click();
@@ -187,7 +177,6 @@ public class SearchScreens {
 	}
 	
 	public void GeneralInquiry() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(GInquiry).click();
@@ -195,7 +184,6 @@ public class SearchScreens {
 	}
 	
 	public void Notice() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(Notice).click();
@@ -203,7 +191,6 @@ public class SearchScreens {
 	}
 	
 	public void DemandLetter() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(DemandLetter).click();
@@ -211,7 +198,6 @@ public class SearchScreens {
 	}
 	
 	public void StatutoryNotice() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(PreSuitNotice).click();
@@ -219,7 +205,6 @@ public class SearchScreens {
 	}
 	
 	public void PendingResearch() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(200));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		driver.findElement(OtherActivities).click();
 		driver.findElement(PendingRsrch).click();

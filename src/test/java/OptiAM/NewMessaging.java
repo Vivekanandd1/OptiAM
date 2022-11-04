@@ -28,12 +28,12 @@ public class NewMessaging {
 	
 	public NewMessaging(WebDriver driver) {
 		this.driver = driver;
+		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 	}
 	
 
 
 	public void PropertyPreservationPI100() throws InterruptedException, IOException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		wait.until(ExpectedConditions.presenceOfElementLocated(More));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
@@ -58,7 +58,6 @@ public class NewMessaging {
 	    }
 	
 	public void PropertyPreservationPI200() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -79,7 +78,6 @@ public class NewMessaging {
 	}
 	
 	public void PropertyPreservationPGM100() throws InterruptedException, IOException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		wait.until(ExpectedConditions.presenceOfElementLocated(More));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
@@ -104,7 +102,6 @@ public class NewMessaging {
 	    }
 	
 	public void PropertyPreservationPGM200() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -124,7 +121,6 @@ public class NewMessaging {
 	    Thread.sleep(10000);
 	}
 	public void ForeclosureUncontestedUF100() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -145,7 +141,6 @@ public class NewMessaging {
 	}
 	
 	public void ForeclosureUncontestedUF150() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -165,7 +160,6 @@ public class NewMessaging {
 	    Thread.sleep(5000);
 	}
 	public void ForeclosureUncontestedUF200() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -186,7 +180,6 @@ public class NewMessaging {
 	}
 	
 	public void ForeclosureUncontestedUF250() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -207,7 +200,6 @@ public class NewMessaging {
 	}
 	
 	public void ForeclosureUncontestedUF300() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -228,7 +220,6 @@ public class NewMessaging {
 	}
 	
 	public void ForeclosureUncontestedUF350() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -249,7 +240,6 @@ public class NewMessaging {
 	}
 	
 	public void ForeclosureUncontestedUF400() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -270,7 +260,6 @@ public class NewMessaging {
 	}
 	
 	public void ForeclosureUncontestedUF500() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -291,7 +280,6 @@ public class NewMessaging {
 	}
 	
 	public void PreReoP500() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -312,7 +300,6 @@ public class NewMessaging {
 	}
 	
 	public void ClassValuationRA500() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -333,7 +320,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0110() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -354,7 +340,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0120() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -375,7 +360,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0130() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -396,7 +380,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0140() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -417,7 +400,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0150() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -438,7 +420,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0160() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -459,7 +440,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0180() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -480,7 +460,6 @@ public class NewMessaging {
 	}
 	
 	public void ReoR0500() throws IOException, InterruptedException {
-		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
 		driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
