@@ -31,6 +31,7 @@ public class CaseBoarding {
 	}
 	
 	public void Translation() throws InterruptedException, IOException {
+		 Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Servicing));
 		driver.findElement(Servicing).click();
 		driver.findElement(Translation).click();

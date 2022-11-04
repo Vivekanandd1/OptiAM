@@ -16,6 +16,7 @@ public class OldMessaging {
 	private WebDriver driver;
 	  private WebDriverWait wait;
 	  Actions build;
+	  JavascriptExecutor executor;
 	  
 	  By More = By.xpath("//a[normalize-space()='More']");
 	  By SystemAdmin = By.xpath("//a[normalize-space()='System Admin']");
@@ -28,7 +29,8 @@ public class OldMessaging {
 	  public OldMessaging(WebDriver driver) {
 		  this.driver=driver;
 		  wait = new WebDriverWait(driver,Duration.ofSeconds(500));
-			build = new Actions(driver);
+		 build = new Actions(driver);
+		executor = (JavascriptExecutor)driver;
 	  }
 	  
 	  public void PropertyPreservation() throws InterruptedException, IOException {
@@ -43,9 +45,9 @@ public class OldMessaging {
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
 			//1st Step of Property Preservation
 			WebElement element1 = driver.findElement(OpenBTN);
-		    build.moveToElement(element1).click(element1);
-		    build.perform();
-		    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00100.Translation File\\01.TransalationFile.exe");
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00200. Property Inspection from MSI\\01.PropertyPreservationPI.exe");
 		    Thread.sleep(2000);
 		    WebElement element2 = driver.findElement(sendBtn);
 		    build.moveToElement(element2).click(element2);
