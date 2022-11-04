@@ -15,7 +15,7 @@ public class OldMessaging {
 	
 	private WebDriver driver;
 	  private WebDriverWait wait;
-	  
+	  Actions build;
 	  
 	  By More = By.xpath("//a[normalize-space()='More']");
 	  By SystemAdmin = By.xpath("//a[normalize-space()='System Admin']");
@@ -28,30 +28,29 @@ public class OldMessaging {
 	  public OldMessaging(WebDriver driver) {
 		  this.driver=driver;
 		  wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+			build = new Actions(driver);
 	  }
 	  
-	  public void PropertyPreservationPI100() throws InterruptedException, IOException {
+	  public void PropertyPreservation() throws InterruptedException, IOException {
 			wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 			driver.findElement(Test).click();
-			Actions act = new Actions(driver);
-			act.moveToElement(driver.findElement(OldMessaging)).perform();
+			build.moveToElement(driver.findElement(OldMessaging)).perform();
 			driver.findElement(OldMSI).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
-			/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
-			Thread.sleep(2000);
+			//1st Step of Property Preservation
 			WebElement element1 = driver.findElement(OpenBTN);
-		    JavascriptExecutor executor = (JavascriptExecutor)driver;
-		    executor.executeScript("arguments[0].click();", element1);
-		    Thread.sleep(2000);
-		    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\01.PropertyPreservationPI.exe");
+		    build.moveToElement(element1).click(element1);
+		    build.perform();
+		    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00100.Translation File\\01.TransalationFile.exe");
 		    Thread.sleep(2000);
 		    WebElement element2 = driver.findElement(sendBtn);
-		    executor.executeScript("arguments[0].click();", element2);
-		    Thread.sleep(5000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(2000);
 		    }
 
 }
