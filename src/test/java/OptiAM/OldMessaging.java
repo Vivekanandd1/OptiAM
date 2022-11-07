@@ -23,6 +23,7 @@ public class OldMessaging {
 	  By Test = By.xpath("(//a[normalize-space()='Test'])[1]");
 	  By OldMessaging = By.xpath("//a[normalize-space()='Messaging Tester (OLD)']");
 	  By OldMSI = By.xpath("//a[normalize-space()='MSI - Property Preservation Service Provider']");
+	  By OldDeval = By.xpath("//a[normalize-space()='DEVAL - Legal Service Provider']");
 	  By OpenBTN = By.id("selectFile");
 	  By sendBtn = By.xpath("//input[@value='Send To Hub']");
 	  
@@ -84,5 +85,15 @@ public class OldMessaging {
 	        build.perform();
 	        Thread.sleep(5000);
 		    }
+	  
+	  public void ForeclosureUnContested() {
+		  wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+			driver.findElement(Test).click();
+			build.moveToElement(driver.findElement(OldMessaging)).perform();
+			driver.findElement(OldDeval).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
+			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
+		  
+	  }
 
 }
