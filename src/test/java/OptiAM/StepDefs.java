@@ -106,7 +106,7 @@ public class StepDefs {
      
      @Test(priority = 2)
      public void OldMessaging() throws InterruptedException, IOException {
-    	 oldMessaging.PropertyPreservation();
+    	 oldMessaging.PropertyPreservationPI();
      }
 	
 	@AfterTest

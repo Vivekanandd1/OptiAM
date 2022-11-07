@@ -33,7 +33,7 @@ public class OldMessaging {
 		executor = (JavascriptExecutor)driver;
 	  }
 	  
-	  public void PropertyPreservation() throws InterruptedException, IOException {
+	  public void PropertyPreservationPI() throws InterruptedException, IOException {
 			wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
@@ -53,6 +53,14 @@ public class OldMessaging {
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
 	        Thread.sleep(2000);
+	         //1st Step of Property Preservation
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00200. Property Inspection from MSI\\02.PropertyPreservationPI.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(5000);
 		    }
 
 }
