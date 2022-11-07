@@ -33,7 +33,7 @@ public class OldMessaging {
 		executor = (JavascriptExecutor)driver;
 	  }
 	  
-	  public void PropertyPreservationPI() throws InterruptedException, IOException {
+	  public void PropertyPreservation() throws InterruptedException, IOException {
 			wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
@@ -43,7 +43,7 @@ public class OldMessaging {
 			driver.findElement(OldMSI).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
-			//1st Step of Property Preservation
+			//1st Step of Property Preservation inspection
 			WebElement element1 = driver.findElement(OpenBTN);
 			executor.executeScript("arguments[0].click();", element1);
 		    Thread.sleep(2000);
@@ -53,10 +53,32 @@ public class OldMessaging {
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
 	        Thread.sleep(2000);
-	         //1st Step of Property Preservation
+	         //2nd Step of Property Preservation inspection
 			executor.executeScript("arguments[0].click();", element1);
 		    Thread.sleep(2000);
 		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00200. Property Inspection from MSI\\02.PropertyPreservationPI.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(5000);
+	        //1st step of Property Preservation General Maintenence 
+	        try{
+	        executor.executeScript("arguments[0].click();", element1);
+	        }
+	        finally {
+	        	build.moveToElement(element1).click(element1);
+		        build.perform();
+			}
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00250.Property Preservation from MSI\\01.PropertyPreservationPGM.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(2000);
+	        //2nd step of Property Preservation General Maintenence 
+	        executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00250.Property Preservation from MSI\\02.PropertyPreservationPGM.exe");
 		    Thread.sleep(2000);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
