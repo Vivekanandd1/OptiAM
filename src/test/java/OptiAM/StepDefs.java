@@ -53,9 +53,9 @@ public class StepDefs {
 		Caseborading.Translation();
 	}
 	
-//	@Test(priority = 2)
-//	public void SearchScreens() throws IOException, InterruptedException {
-//		searchscreens.CaseAssigned();
+	@Test(priority = 2)
+	public void SearchScreens() throws IOException, InterruptedException {
+		searchscreens.CaseAssigned();
 //		searchscreens.Forclosure();
 //		searchscreens.Bankruptcy();
 //		searchscreens.ReoScreens();	
@@ -71,43 +71,43 @@ public class StepDefs {
 //		searchscreens.DemandLetter();
 //		searchscreens.StatutoryNotice();
 //		searchscreens.PendingResearch();
-//		searchscreens.CaseSearch();
-//	}
-//	
-//	
-//	
-//	
-//     @Test(priority = 3)
-//	 public void NewMessagingSubSystem() throws InterruptedException, IOException {
-//		Newmessaging.PropertyPreservationPI100();
-//		Newmessaging.PropertyPreservationPI200();
-//		Newmessaging.PropertyPreservationPGM100();
-//		Newmessaging.PropertyPreservationPGM200();
-//		Newmessaging.ForeclosureUncontestedUF100();
-//		Newmessaging.ForeclosureUncontestedUF150();
-//		Newmessaging.ForeclosureUncontestedUF200();
-//		Newmessaging.ForeclosureUncontestedUF250();
-//		Newmessaging.ForeclosureUncontestedUF300();
-//		Newmessaging.ForeclosureUncontestedUF350();
-//		Newmessaging.ForeclosureUncontestedUF400();
-//		Newmessaging.ForeclosureUncontestedUF500();
-//		Newmessaging.PreReoP500();
-//		Newmessaging.ClassValuationRA500();
-//		Newmessaging.ReoR0110();
-//		Newmessaging.ReoR0120();
-//		Newmessaging.ReoR0130();
-//		Newmessaging.ReoR0140();
-//		Newmessaging.ReoR0150();
-//		Newmessaging.ReoR0160();
-//		Newmessaging.ReoR0180();
-//		Newmessaging.ReoR0500();	
-//	}
+		searchscreens.CaseSearch();
+	}
+	
+	
+	
+	
+     @Test(priority = 3)
+	 public void NewMessagingSubSystem() throws InterruptedException, IOException {
+		Newmessaging.PropertyPreservationPI100();
+		Newmessaging.PropertyPreservationPI200();
+		Newmessaging.PropertyPreservationPGM100();
+		Newmessaging.PropertyPreservationPGM200();
+		Newmessaging.ForeclosureUncontestedUF100();
+		Newmessaging.ForeclosureUncontestedUF150();
+		Newmessaging.ForeclosureUncontestedUF200();
+		Newmessaging.ForeclosureUncontestedUF250();
+		Newmessaging.ForeclosureUncontestedUF300();
+		Newmessaging.ForeclosureUncontestedUF350();
+		Newmessaging.ForeclosureUncontestedUF400();
+		Newmessaging.ForeclosureUncontestedUF500();
+		Newmessaging.PreReoP500();
+		Newmessaging.ClassValuationRA500();
+		Newmessaging.ReoR0110();
+		Newmessaging.ReoR0120();
+		Newmessaging.ReoR0130();
+		Newmessaging.ReoR0140();
+		Newmessaging.ReoR0150();
+		Newmessaging.ReoR0160();
+		Newmessaging.ReoR0180();
+		Newmessaging.ReoR0500();	
+	}
 	
      
-     @Test(priority = 2)
-     public void OldMessaging() throws InterruptedException, IOException {
-    	 oldMessaging.PropertyPreservation();
-     }
+//     @Test(priority = 2)
+//     public void OldMessaging() throws InterruptedException, IOException {
+//    	 oldMessaging.PropertyPreservation();
+//     }
 	
 	@AfterTest
 	public void User_Logout() throws InterruptedException {

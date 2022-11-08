@@ -13,6 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class NewMessaging {
 	  private WebDriver driver;
 	  private WebDriverWait wait;
+	  Actions act; 
+	  JavascriptExecutor executor;
 	  
 	  By More = By.xpath("//a[normalize-space()='More']");
 	  By SystemAdmin = By.xpath("//a[normalize-space()='System Admin']");
@@ -29,6 +31,8 @@ public class NewMessaging {
 	public NewMessaging(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		act = new Actions(driver);
+		executor = (JavascriptExecutor)driver;
 	}
 	
 
@@ -39,7 +43,6 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
@@ -47,7 +50,6 @@ public class NewMessaging {
 		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\01.PropertyPreservationPI.exe");
@@ -62,13 +64,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00200.Property Preservation Inspection\\02.PropertyPreservationPI.exe");
@@ -83,7 +83,6 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
@@ -91,7 +90,6 @@ public class NewMessaging {
 		/*The Open Button comes under a table so we have to use Explicitly JS to click on OpenButton*/
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00250.Propety Preservation General Maintenance\\01.PropertyPreservationPGM.exe");
@@ -106,13 +104,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00250.Propety Preservation General Maintenance\\02.PropertyPreservationPGM.exe");
@@ -125,13 +121,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\01.FCUF100.exe");
@@ -145,13 +139,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
 		Thread.sleep(2000);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\02.FCUF150.exe");
@@ -164,13 +156,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\03.FCUF200.exe");
@@ -184,13 +174,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\04.FCUF250.exe");
@@ -204,13 +192,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\05.FCUF300.exe");
@@ -224,13 +210,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		Thread.sleep(2000);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\06.FCUF350.exe");
@@ -244,13 +228,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\07.FCUF400.exe");
@@ -264,13 +246,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\08.FCUF500.exe");
@@ -284,13 +264,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewMSI).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00400.Pre-Reo from MSI\\01.PreReoP500.exe");
@@ -304,13 +282,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewClassValution).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00500.Appraisal Valuation Reo From Class Valuation\\01.ClassValutionRA500.exe");
@@ -324,13 +300,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\01.ReoR110.exe");
@@ -344,13 +318,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\02.ReoR120.exe");
@@ -364,13 +336,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\03.ReoR130.exe");
@@ -384,13 +354,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\04.ReoR140.exe");
@@ -404,13 +372,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\05.ReoR150.exe");
@@ -424,13 +390,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\06.ReoR160.exe");
@@ -444,13 +408,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\07.ReoR180.exe");
@@ -464,13 +426,11 @@ public class NewMessaging {
 		driver.findElement(SystemAdmin).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
-		Actions act = new Actions(driver);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
 		driver.findElement(NewRadian).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
-	    JavascriptExecutor executor = (JavascriptExecutor)driver;
 	    executor.executeScript("arguments[0].click();", element1);
 	    Thread.sleep(2000);
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00600.REO from Radian\\08.ReoR500.exe");
