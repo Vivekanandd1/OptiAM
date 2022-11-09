@@ -24,6 +24,7 @@ public class OldMessaging {
 	  By OldMessaging = By.xpath("//a[normalize-space()='Messaging Tester (OLD)']");
 	  By OldMSI = By.xpath("//a[normalize-space()='MSI - Property Preservation Service Provider']");
 	  By OldDeval = By.xpath("//a[normalize-space()='DEVAL - Legal Service Provider']");
+	  By OldClassValution = By.xpath("//a[normalize-space()='Class Valuation - Appraisal Service Provider']");
 	  By OpenBTN = By.id("selectFile");
 	  By sendBtn = By.xpath("//input[@value='Send To Hub']");
 	  
@@ -180,6 +181,28 @@ public class OldMessaging {
 			executor.executeScript("arguments[0].click();", element1);
 		    Thread.sleep(2000);
 		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00400.Pre-Reo from MSI\\01.PreReo.exe");
+		    Thread.sleep(2000);
+		    WebElement element2 = driver.findElement(sendBtn);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(10000);
+	  }
+	  
+	  public void AppraisalValutionReo() throws InterruptedException, IOException {
+		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
+			driver.findElement(More).click();
+			driver.findElement(SystemAdmin).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+			driver.findElement(Test).click();
+			build.moveToElement(driver.findElement(OldMessaging)).perform();
+			driver.findElement(OldClassValution).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
+			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
+			//1st Step of Property Preservation inspection
+			WebElement element1 = driver.findElement(OpenBTN);
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00500.Appraisal Valuation Reo From Class Valuation\\01.AppraisalValuationReo.exe");
 		    Thread.sleep(2000);
 		    WebElement element2 = driver.findElement(sendBtn);
 		    build.moveToElement(element2).click(element2);

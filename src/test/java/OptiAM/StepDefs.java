@@ -109,6 +109,7 @@ public class StepDefs {
     	 oldMessaging.PropertyPreservation();
     	 oldMessaging.ForeclosureUnContested();
     	 oldMessaging.PreReo();
+    	 oldMessaging.AppraisalValutionReo();
      }
 	
 	@AfterTest
