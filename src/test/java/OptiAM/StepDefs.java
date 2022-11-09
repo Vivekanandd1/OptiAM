@@ -108,6 +108,7 @@ public class StepDefs {
      public void OldMessaging() throws InterruptedException, IOException {
     	 oldMessaging.PropertyPreservation();
     	 oldMessaging.ForeclosureUnContested();
+    	 oldMessaging.PreReo();
      }
 	
 	@AfterTest

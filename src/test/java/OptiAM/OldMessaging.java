@@ -162,8 +162,29 @@ public class OldMessaging {
 		    Thread.sleep(2000);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
+	        Thread.sleep(10000);	  
+	  }
+	  
+	  public void PreReo() throws InterruptedException, IOException {
+		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
+			driver.findElement(More).click();
+			driver.findElement(SystemAdmin).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+			driver.findElement(Test).click();
+			build.moveToElement(driver.findElement(OldMessaging)).perform();
+			driver.findElement(OldMSI).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
+			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
+			//1st Step of Property Preservation inspection
+			WebElement element1 = driver.findElement(OpenBTN);
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00400.Pre-Reo from MSI\\01.PreReo.exe");
+		    Thread.sleep(2000);
+		    WebElement element2 = driver.findElement(sendBtn);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
 	        Thread.sleep(10000);
-		  
 	  }
 
 }

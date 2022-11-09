@@ -53,7 +53,7 @@ public class SearchScreens {
 	
 	public SearchScreens(WebDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(500));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
 	
 		
 	}
