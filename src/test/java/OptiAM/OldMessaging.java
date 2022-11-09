@@ -83,16 +83,86 @@ public class OldMessaging {
 		    Thread.sleep(2000);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
-	        Thread.sleep(5000);
+	        Thread.sleep(10000);
 		    }
 	  
-	  public void ForeclosureUnContested() {
-		  wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+	  public void ForeclosureUnContested() throws InterruptedException, IOException {
+		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
+			driver.findElement(More).click();
+			driver.findElement(SystemAdmin).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 			driver.findElement(Test).click();
 			build.moveToElement(driver.findElement(OldMessaging)).perform();
 			driver.findElement(OldDeval).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
+			//1st step of ForeclosureUncontested 
+			   Thread.sleep(2000);
+			WebElement element1 = driver.findElement(OpenBTN);
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\01.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    WebElement element2 = driver.findElement(sendBtn);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //2nd step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\02.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //3rd step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\03.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //4th step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\04.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //5th step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\05.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //6th step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\06.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //7th step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\07.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //8th step of ForeclosureUncontested
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00300.FC_UN from Deval\\08.ForeclosureUncontested.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(10000);
 		  
 	  }
 
