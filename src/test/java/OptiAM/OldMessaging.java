@@ -25,18 +25,20 @@ public class OldMessaging {
 	  By OldMSI = By.xpath("//a[normalize-space()='MSI - Property Preservation Service Provider']");
 	  By OldDeval = By.xpath("//a[normalize-space()='DEVAL - Legal Service Provider']");
 	  By OldClassValution = By.xpath("//a[normalize-space()='Class Valuation - Appraisal Service Provider']");
+	  By OldRadian = By.xpath("//a[normalize-space()='RADIAN - REO Service Provider']");
 	  By OpenBTN = By.id("selectFile");
 	  By sendBtn = By.xpath("//input[@value='Send To Hub']");
 	  
 	  public OldMessaging(WebDriver driver) {
 		  this.driver=driver;
-		  wait = new WebDriverWait(driver,Duration.ofSeconds(500));
+		  wait = new WebDriverWait(driver,Duration.ofSeconds(2000));
 		 build = new Actions(driver);
 		executor = (JavascriptExecutor)driver;
 	  }
 	  
 	  public void PropertyPreservation() throws InterruptedException, IOException {
 			wait.until(ExpectedConditions.presenceOfElementLocated(More));
+			wait.until(ExpectedConditions.elementToBeClickable(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
@@ -176,7 +178,7 @@ public class OldMessaging {
 			driver.findElement(OldMSI).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
-			//1st Step of Property Preservation inspection
+			//1st Step of USDA-PreREO
 			WebElement element1 = driver.findElement(OpenBTN);
 			executor.executeScript("arguments[0].click();", element1);
 		    Thread.sleep(2000);
@@ -198,13 +200,101 @@ public class OldMessaging {
 			driver.findElement(OldClassValution).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
-			//1st Step of Property Preservation inspection
+			//1st Step of Appraisal Valuation Reo
 			WebElement element1 = driver.findElement(OpenBTN);
 			executor.executeScript("arguments[0].click();", element1);
 		    Thread.sleep(2000);
 		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00500.Appraisal Valuation Reo From Class Valuation\\01.AppraisalValuationReo.exe");
 		    Thread.sleep(2000);
 		    WebElement element2 = driver.findElement(sendBtn);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(10000);
+	  }
+	  
+	  public void REO() throws InterruptedException, IOException {
+		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
+			driver.findElement(More).click();
+			driver.findElement(SystemAdmin).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+			driver.findElement(Test).click();
+			build.moveToElement(driver.findElement(OldMessaging)).perform();
+			driver.findElement(OldRadian).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
+			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
+			//1st Step of REO
+			WebElement element1 = driver.findElement(OpenBTN);
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\01.REO.exe");
+		    Thread.sleep(2000);
+		    WebElement element2 = driver.findElement(sendBtn);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	    	//2nd Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\02.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	      //2nd Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\02.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	      //3rd Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\03.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	      //4th Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\04.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //5th Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\05.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        //6th Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\06.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        
+	      //7th Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\07.REO.exe");
+		    Thread.sleep(2000);
+		    build.moveToElement(element2).click(element2);
+	        build.perform();
+	        Thread.sleep(3000);
+	        
+	      //8th Step of REO
+			executor.executeScript("arguments[0].click();", element1);
+		    Thread.sleep(2000);
+		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\08.REO.exe");
+		    Thread.sleep(2000);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
 	        Thread.sleep(10000);
