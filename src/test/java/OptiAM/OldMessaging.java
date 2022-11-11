@@ -31,7 +31,7 @@ public class OldMessaging {
 	  
 	  public OldMessaging(WebDriver driver) {
 		  this.driver=driver;
-		  wait = new WebDriverWait(driver,Duration.ofSeconds(2000));
+		  wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 		 build = new Actions(driver);
 		executor = (JavascriptExecutor)driver;
 	  }
@@ -165,11 +165,12 @@ public class OldMessaging {
 		    Thread.sleep(2000);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
-	        Thread.sleep(10000);	  
+	        Thread.sleep(12000);	  
 	  }
 	  
 	  public void PreReo() throws InterruptedException, IOException {
 		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
+		  wait.until(ExpectedConditions.elementToBeClickable(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
 			wait.until(ExpectedConditions.presenceOfElementLocated(Test));

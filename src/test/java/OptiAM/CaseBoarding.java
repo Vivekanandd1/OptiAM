@@ -26,13 +26,14 @@ public class CaseBoarding {
 	public CaseBoarding(WebDriver driver) {
 		this.driver=driver;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(100));
-		wait = new WebDriverWait(driver,Duration.ofSeconds(1000));
+		wait = new WebDriverWait(driver,Duration.ofSeconds(5000));
 		builder = new Actions(driver);
 	}
 	
 	public void Translation() throws InterruptedException, IOException {
 		 Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Servicing));
+		wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 		driver.findElement(Servicing).click();
 		driver.findElement(Translation).click();
 		WebElement element1 = driver.findElement(FileSelection);
