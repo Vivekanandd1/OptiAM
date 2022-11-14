@@ -122,6 +122,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
@@ -140,6 +142,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
@@ -157,6 +161,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
@@ -175,6 +181,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
@@ -193,6 +201,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
@@ -212,6 +222,8 @@ public class NewMessaging {
 		driver.findElement(Test).click();
 		Thread.sleep(2000);
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		WebElement element1 = driver.findElement(OpenBTN);
 		WebElement element2 = driver.findElement(sendBtn);
@@ -229,6 +241,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);
@@ -247,6 +261,8 @@ public class NewMessaging {
 		wait.until(ExpectedConditions.presenceOfElementLocated(Test));
 		driver.findElement(Test).click();
 		act.moveToElement(driver.findElement(NewMessaging)).perform();
+		WebElement element=driver.findElement(NewDeval);
+		executor.executeScript("arguments[0].scrollIntoView(true);", element); 
 		driver.findElement(NewDeval).click();
 		Thread.sleep(2000);
 		WebElement element1 = driver.findElement(OpenBTN);

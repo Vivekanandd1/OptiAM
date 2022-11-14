@@ -28,7 +28,7 @@ public class StepDefs {
 	NewMessaging Newmessaging;
 	CaseBoarding Caseborading;
 	OldMessaging oldMessaging;
-
+	CaseWizard caseWizard;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -41,6 +41,8 @@ public class StepDefs {
 		Newmessaging = new NewMessaging(driver);
 		Caseborading = new CaseBoarding(driver);
 		oldMessaging = new OldMessaging(driver);
+		caseWizard = new CaseWizard(driver);
+		
 	}
 		
 	
@@ -110,6 +112,11 @@ public class StepDefs {
     	 oldMessaging.PreReo();
     	 oldMessaging.AppraisalValutionReo();
     	 oldMessaging.REO();
+     }
+     
+     @Test(priority = 5)
+     public void CaseByCaseWizard() throws InterruptedException, IOException {
+    	 caseWizard.CaseFromCaseWizard();
      }
 	
 	@AfterTest
