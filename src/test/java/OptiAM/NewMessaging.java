@@ -256,7 +256,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\08.FCUF500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(10000);
+	    Thread.sleep(25000);
 	}
 	
 	public void PreReoP500() throws IOException, InterruptedException {
@@ -292,7 +292,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00500.Appraisal Valuation Reo From Class Valuation\\01.ClassValutionRA500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(10000);
+	    Thread.sleep(13000);
 	}
 	
 	public void ReoR0110() throws IOException, InterruptedException {

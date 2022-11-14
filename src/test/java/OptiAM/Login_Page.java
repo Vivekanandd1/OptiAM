@@ -56,12 +56,16 @@ public class Login_Page  {
 		driver.findElement(Login_ID).sendKeys(UserName);
 		driver.findElement(PasswordField).sendKeys(Password);
 		driver.findElement(Login_Btn).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(LoanProgramSelection));
 		wait.until(ExpectedConditions.elementToBeClickable(LoanProgramSelection));
 		driver.findElement(LoanProgramSelection).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Usda_Btn));
 		wait.until(ExpectedConditions.elementToBeClickable(Usda_Btn));
 		driver.findElement(Usda_Btn).click();
+		Thread.sleep(2000);
 		Robot robot = new Robot();
-		for (int i = 0; i < 3; i++) {
+		//to Zoom out the on Browser
+		for (int i = 0; i < 2; i++) {
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_SUBTRACT);
 			robot.keyRelease(KeyEvent.VK_SUBTRACT);

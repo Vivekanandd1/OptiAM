@@ -6,7 +6,15 @@
     </listeners>
   <test thread-count="5" name="Optiam">
     <classes>
-      <class name="OptiAM.StepDefs"/>
+      <class name="OptiAM.StepDefs">
+      <methods>
+      <include name="User_Login"></include>
+      <!--  <include name="CaseBoarding"></include>
+      <include name="SearchScreens"></include>
+        <include name="NewMessagingSubSystem"></include>-->
+        <include name="OldMessaging"></include>
+      </methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

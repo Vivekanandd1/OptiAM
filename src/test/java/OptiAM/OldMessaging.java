@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class OldMessaging {
 	
 	private WebDriver driver;
-	  private WebDriverWait wait;
 	  Actions build;
 	  JavascriptExecutor executor;
 	  
@@ -31,12 +30,12 @@ public class OldMessaging {
 	  
 	  public OldMessaging(WebDriver driver) {
 		  this.driver=driver;
-		  wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 		 build = new Actions(driver);
 		executor = (JavascriptExecutor)driver;
 	  }
 	  
 	  public void PropertyPreservation() throws InterruptedException, IOException {
+		  WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 			wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			wait.until(ExpectedConditions.elementToBeClickable(More));
 			driver.findElement(More).click();
@@ -90,6 +89,7 @@ public class OldMessaging {
 		    }
 	  
 	  public void ForeclosureUnContested() throws InterruptedException, IOException {
+		  WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
@@ -165,19 +165,20 @@ public class OldMessaging {
 		    Thread.sleep(2000);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
-	        Thread.sleep(12000);	  
+	        Thread.sleep(25000);	  
 	  }
 	  
 	  public void PreReo() throws InterruptedException, IOException {
+		  WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
-		  wait.until(ExpectedConditions.elementToBeClickable(More));
+		  wait.until(ExpectedConditions.elementToBeClickable(More)); 
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
-			wait.until(ExpectedConditions.presenceOfElementLocated(Test));
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Test));
 			driver.findElement(Test).click();
 			build.moveToElement(driver.findElement(OldMessaging)).perform();
 			driver.findElement(OldMSI).click();
-			wait.until(ExpectedConditions.presenceOfElementLocated(OpenBTN));
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(OpenBTN));
 			wait.until(ExpectedConditions.elementToBeClickable(OpenBTN));
 			//1st Step of USDA-PreREO
 			WebElement element1 = driver.findElement(OpenBTN);
@@ -192,6 +193,7 @@ public class OldMessaging {
 	  }
 	  
 	  public void AppraisalValutionReo() throws InterruptedException, IOException {
+		  WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
@@ -210,10 +212,11 @@ public class OldMessaging {
 		    WebElement element2 = driver.findElement(sendBtn);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
-	        Thread.sleep(10000);
+	        Thread.sleep(13000);
 	  }
 	  
 	  public void REO() throws InterruptedException, IOException {
+		  WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30000));
 		  wait.until(ExpectedConditions.presenceOfElementLocated(More));
 			driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();

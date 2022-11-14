@@ -35,6 +35,7 @@ public class StepDefs {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	  	driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(100));
+	  	driver.manage().deleteAllCookies();
 		login_page  = new Login_Page(driver);
 		searchscreens = new SearchScreens(driver);
 		Newmessaging = new NewMessaging(driver);
