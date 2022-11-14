@@ -32,9 +32,13 @@ public class CaseWizard {
 	By PropertyState = By.xpath("//select[@id='PropertyAddressState']");
 	By PropertyAddressStreet = By.xpath("//input[@id='PropertyAddressStreet']");
 	By Description = By.xpath("//a[@aria-label='link']//span//*[name()='svg']");
-	By DescriptionBox = By.xpath("//textarea[@id=\"LegalDescription\"]");
-	By DescriptionSaveBtn = By.xpath("(//button[contains(text(),\"Save\")])[2]");
-	By DebtAmount = By.xpath("//input[@id=\"USDA_TotalDebtAmount\"]");
+	By DescriptionBox = By.xpath("//textarea[@id='LegalDescription']");
+	By DescriptionSaveBtn = By.xpath("(//button[contains(text(),'Save')])[2]");
+	By DebtAmount = By.xpath("//input[@id='USDA_TotalDebtAmount']");
+	By Service = By.xpath("//select[@id='USDA_ServiceType']");
+	By ActionCode = By.xpath("//select[@id='USDA_Action_Code']");
+	By SubStatus = By.xpath("//select[@id='Activity_or_Sub_Status_Type']");
+	By LocationCode = By.xpath("//input[@id='Text4']");
 	
 	public void CaseFromCaseWizard() {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(50000));
@@ -62,6 +66,16 @@ public class CaseWizard {
 		driver.findElement(DescriptionBox).sendKeys("Test Data");
 		driver.findElement(DescriptionSaveBtn).click();
 		driver.findElement(DebtAmount).sendKeys("70");
+		WebElement ServiceSelect = driver.findElement(Service);
+		Select Serviceselection = new Select(ServiceSelect);
+		Serviceselection.selectByVisibleText("FCLL_LGL");
+		WebElement ActionCodeSelection = driver.findElement(ActionCode);
+		Select CodeSelect = new Select(ActionCodeSelection);
+		CodeSelect.selectByVisibleText("CA / Case Assigned");
+		WebElement SubStatusSelection = driver.findElement(SubStatus);
+		Select SubStatusSelect = new Select(SubStatusSelection);
+		SubStatusSelect.selectByVisibleText("Case Assigned");
+		driver.findElement(LocationCode).sendKeys("123456789");
 		
 	}
 
