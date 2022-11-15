@@ -39,12 +39,15 @@ public class CaseWizard {
 	By ActionCode = By.xpath("//select[@id='USDA_Action_Code']");
 	By SubStatus = By.xpath("//select[@id='Activity_or_Sub_Status_Type']");
 	By LocationCode = By.xpath("//input[@id='Text4']");
+	By NextBtn = By.xpath("(//div/input[@type='submit'][@value='Next'])[1]");
+	By BorrowerAddition = By.xpath("(//button[contains(text(),'Add Contact')])[1]");
 	
-	public void CaseFromCaseWizard() {
+	public void CaseFromCaseWizard() throws InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(50000));
 		wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 		driver.findElement(Servicing).click();
 		driver.findElement(CaseWizard).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(CaseProgramSelection));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(CaseProgramSelection));
 		wait.until(ExpectedConditions.elementToBeClickable(CaseProgramSelection));
 		driver.findElement(CaseProgramSelection).click();
@@ -76,7 +79,12 @@ public class CaseWizard {
 		Select SubStatusSelect = new Select(SubStatusSelection);
 		SubStatusSelect.selectByVisibleText("Case Assigned");
 		driver.findElement(LocationCode).sendKeys("123456789");
-		
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.presenceOfElementLocated(NextBtn));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(NextBtn));
+		wait.until(ExpectedConditions.elementToBeClickable(NextBtn));
+		driver.findElement(NextBtn).click();
+		/*Borrower Window Initialisation*/
 	}
 
 }
