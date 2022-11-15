@@ -70,7 +70,7 @@ public class CaseWizard {
 		wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 		driver.findElement(Servicing).click();
 		driver.findElement(CaseWizard).click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.presenceOfElementLocated(CaseProgramSelection));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(CaseProgramSelection));
 		wait.until(ExpectedConditions.elementToBeClickable(CaseProgramSelection));

@@ -62,7 +62,7 @@ public class Login_Page  {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(Usda_Btn));
 		wait.until(ExpectedConditions.elementToBeClickable(Usda_Btn));
 		driver.findElement(Usda_Btn).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		Robot robot = new Robot();
 		//to Zoom out the on Browser
 		for (int i = 0; i < 2; i++) {
@@ -71,6 +71,7 @@ public class Login_Page  {
 			robot.keyRelease(KeyEvent.VK_SUBTRACT);
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			}
+		Thread.sleep(3000);
 	}
    
    

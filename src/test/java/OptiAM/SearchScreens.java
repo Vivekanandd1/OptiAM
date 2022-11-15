@@ -8,6 +8,7 @@ import java.time.Duration;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -187,7 +188,16 @@ public class SearchScreens {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50000));
 	wait.until(ExpectedConditions.visibilityOfElementLocated(USDPPS));
 	wait.until(ExpectedConditions.elementToBeClickable(USDPPS));
-	driver.findElement(USDPPS).click();
+	try {
+		driver.findElement(USDPPS).click();
+	}
+	catch (ElementClickInterceptedException e) {
+		System.out.println("Excutor needed");
+	}
+	finally {
+		WebElement Ele = driver.findElement(USDPPS);
+		executor.executeScript("arguments[0].click();", Ele);
+	}
 	driver.findElement(USDAPPS).click();
 	Thread.sleep(5000);
 	}
@@ -242,7 +252,6 @@ public class SearchScreens {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(OtherActivities));
 		wait.until(ExpectedConditions.elementToBeClickable(OtherActivities));
 		executor.executeScript("arguments[0].click();", OtherActivities1);
-//		driver.findElement(OtherActivities).click();
 		driver.findElement(PropertyPreservation).click();
 		Thread.sleep(5000);
 	}

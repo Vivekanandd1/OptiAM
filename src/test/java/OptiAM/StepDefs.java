@@ -1,8 +1,14 @@
 package OptiAM;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 
+/*Author - Vivekanand Deshmukh
+ * Selenium Version - 4
+ * Build Tool - Maven
+ * Reporting Tool -TestNG Extent Report
+ * Testing Framework - TestNg Xml
+ * Automation Framework - PageObjectModel
+ */
+import org.testng.annotations.Test;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -15,7 +21,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
@@ -29,6 +34,7 @@ public class StepDefs {
 	CaseBoarding Caseborading;
 	OldMessaging oldMessaging;
 	CaseWizard caseWizard;
+	MondayEmailTesting monemailTesting;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -43,7 +49,7 @@ public class StepDefs {
 		Caseborading = new CaseBoarding(driver);
 		oldMessaging = new OldMessaging(driver);
 		caseWizard = new CaseWizard(driver);
-		
+		monemailTesting = new MondayEmailTesting(driver);
 	}
 		
 	
@@ -118,6 +124,11 @@ public class StepDefs {
      @Test(priority = 5)
      public void CaseByCaseWizard() throws InterruptedException, IOException {
     	 caseWizard.CaseFromCaseWizard();
+     }
+     
+     @Test(priority = 6)
+     public void MondayEmailTesting() throws InterruptedException, IOException {
+    	 monemailTesting.DcamCaseWizard();
      }
 	
 	@AfterTest
