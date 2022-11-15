@@ -9,10 +9,10 @@
       <class name="OptiAM.StepDefs">
       <methods>
        <include name="User_Login"></include>
-    <!--<include name="CaseBoarding"></include>
+    <include name="CaseBoarding"></include>
       <include name="SearchScreens"></include>
         <include name="NewMessagingSubSystem"></include>
-        <include name="OldMessaging"></include>-->
+        <include name="OldMessaging"></include>
         <include name="CaseByCaseWizard"></include>
       </methods>
       </class>

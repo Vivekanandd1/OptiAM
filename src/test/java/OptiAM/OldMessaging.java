@@ -189,7 +189,7 @@ public class OldMessaging {
 		    WebElement element2 = driver.findElement(sendBtn);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
-	        Thread.sleep(10000);
+	        Thread.sleep(15000);
 	  }
 	  
 	  public void AppraisalValutionReo() throws InterruptedException, IOException {
@@ -212,7 +212,7 @@ public class OldMessaging {
 		    WebElement element2 = driver.findElement(sendBtn);
 		    build.moveToElement(element2).click(element2);
 	        build.perform();
-	        Thread.sleep(13000);
+	        Thread.sleep(15000);
 	  }
 	  
 	  public void REO() throws InterruptedException, IOException {

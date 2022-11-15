@@ -23,7 +23,7 @@ public class CaseWizard {
 	  this.driver=driver;
 	  builder = new Actions(driver);
 	}
-	String CaseNumber = "8899000361";
+	String CaseNumber = "8899000362";
 	By Servicing = By.xpath("(//li[@class='nav-item dropdown'])[1]");
 	By CaseWizard = By.xpath("//a[contains(text(),'Case Wizard')]");
 	By CaseProgramSelection = By.xpath("//select[@id='LoanProgram21']");
@@ -59,6 +59,11 @@ public class CaseWizard {
 	By BorrowerPhone = By.xpath("//input[@id='borrower_phone1']");
 	By SaveAS = By.xpath("//button[@ng-click='SameAsContactAddr()']");
 	By BorrowerFormSaveBtn = By.xpath("//div[@class='btn printDTButtons col-sm-4 ']/input[@value='Save']");
+	By NextFormBtn = By.xpath("//*[@id='Borrower']/form/input[2]");
+	By NextFormBtn1 = By.xpath("//*[@id='Notes']/form/input[2]");
+	By NextFormBtn2 = By.xpath("//*[@id='LoanRec16aLoanVendor']/form/input[2]");
+	By NextFormBtn3 = By.xpath("//*[@id='LoanAlert']/form/input[2]");
+	By AddCaseBtn = By.xpath("//*[@id=\"LoanPayPlan\"]/form/input[2]");
 	
 	public void CaseFromCaseWizard() throws InterruptedException {
 		wait = new WebDriverWait(driver,Duration.ofSeconds(50000));
@@ -160,7 +165,20 @@ public class CaseWizard {
 		jse.executeScript("window.scrollBy(0,400)");
 		Thread.sleep(2000);
 		driver.findElement(BorrowerFormSaveBtn).click();
-		Thread.sleep(10000);
+		Thread.sleep(5000);
+		/*Next steps initialisation*/
+		driver.findElement(NextFormBtn).click();
+		Thread.sleep(2000);
+		driver.findElement(NextFormBtn1).click();
+		Thread.sleep(2000);
+		driver.findElement(NextFormBtn2).click();
+		Thread.sleep(2000);
+		driver.findElement(NextFormBtn3).click();
+		Thread.sleep(2000);
+		driver.findElement(AddCaseBtn).click();
+		Thread.sleep(30000);
+		
+		
 		
 	}
 
