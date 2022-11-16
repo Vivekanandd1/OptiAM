@@ -312,9 +312,10 @@ public class MondayEmailTesting {
 		executor.executeScript("arguments[0].click();", element1);
 		Thread.sleep(2000);
 		 Runtime.getRuntime().exec("C:\\VivekDD\\OptiAM\\Accounting\\DCamCambuFile.exe");
-		 Thread.sleep(2000);
+		 Thread.sleep(1000);
 		 WebElement element2 = driver.findElement(UploadFile);
 			executor.executeScript("arguments[0].click();", element2);
+			Thread.sleep(5000);
 	}
 
 }
