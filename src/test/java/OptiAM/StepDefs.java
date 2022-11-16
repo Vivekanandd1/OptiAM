@@ -128,7 +128,8 @@ public class StepDefs {
      
      @Test(priority = 6)
      public void MondayEmailTesting() throws InterruptedException, IOException {
-    	 monemailTesting.DcamCaseWizard();
+    	 //monemailTesting.DcamCaseWizard();
+    	 monemailTesting.CambuBatchRun();
      }
 	
 	@AfterTest

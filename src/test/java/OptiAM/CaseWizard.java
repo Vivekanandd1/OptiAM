@@ -23,7 +23,7 @@ public class CaseWizard {
 	  this.driver=driver;
 	  builder = new Actions(driver);
 	}
-	String CaseNumber = "8899000362";
+	String CaseNumber = "8899000363";
 	By Servicing = By.xpath("(//li[@class='nav-item dropdown'])[1]");
 	By CaseWizard = By.xpath("//a[contains(text(),'Case Wizard')]");
 	By CaseProgramSelection = By.xpath("//select[@id='LoanProgram21']");
@@ -130,15 +130,27 @@ public class CaseWizard {
 			jse.executeScript("arguments[0].click()", ele);
 		}
 		/*Borrower Window Initialisation*/
-		Thread.sleep(5000);
+		
 		wait.until(ExpectedConditions.presenceOfElementLocated(BorrowerAddition));
 		wait.until(ExpectedConditions.elementToBeClickable(BorrowerAddition));
-		driver.findElement(BorrowerAddition).click();
+		
+		try {
+			driver.findElement(BorrowerAddition).click();
+			Thread.sleep(7000);
+			}
+		catch (ElementClickInterceptedException e) {
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			WebElement ele = driver.findElement(BorrowerAddition);
+			Thread.sleep(7000);
+			jse.executeScript("arguments[0].click()", ele);
+		
+		}
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.presenceOfElementLocated(ContactType));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactType));
 		wait.until(ExpectedConditions.elementToBeClickable(ContactType));
 		WebElement ContactSelecttion = driver.findElement(ContactType);
+		
 		Select ContactSelect = new Select(ContactSelecttion);
 		ContactSelect.selectByVisibleText("Borrower");
 		driver.findElement(FirstName).sendKeys("Ted");

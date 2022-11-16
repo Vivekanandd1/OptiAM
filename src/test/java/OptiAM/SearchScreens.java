@@ -190,15 +190,14 @@ public class SearchScreens {
 	wait.until(ExpectedConditions.elementToBeClickable(USDPPS));
 	try {
 		driver.findElement(USDPPS).click();
+		driver.findElement(USDAPPS).click();
 	}
 	catch (ElementClickInterceptedException e) {
-		System.out.println("Excutor needed");
-	}
-	finally {
 		WebElement Ele = driver.findElement(USDPPS);
 		executor.executeScript("arguments[0].click();", Ele);
-	}
-	driver.findElement(USDAPPS).click();
+		WebElement Ele1 = driver.findElement(USDAPPS);
+		executor.executeScript("arguments[0].click();", Ele1);
+	}	
 	Thread.sleep(5000);
 	}
 	

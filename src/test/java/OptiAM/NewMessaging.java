@@ -272,7 +272,7 @@ public class NewMessaging {
 	    Runtime.getRuntime().exec("C:\\VivekDD\\Xml\\00300.FC_UN from Deval\\08.FCUF500.exe");
 	    Thread.sleep(2000);
 	    executor.executeScript("arguments[0].click();", element2);
-	    Thread.sleep(25000);
+	    Thread.sleep(20000);
 	}
 	
 	public void PreReoP500() throws IOException, InterruptedException {

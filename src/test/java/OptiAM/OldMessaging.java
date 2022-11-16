@@ -229,7 +229,7 @@ public class OldMessaging {
 			//1st Step of REO
 			WebElement element1 = driver.findElement(OpenBTN);
 			executor.executeScript("arguments[0].click();", element1);
-		    Thread.sleep(2000);
+		    Thread.sleep(3000);
 		    Runtime.getRuntime().exec("C:\\VivekDD\\OLD XML\\00600.REO from Radian\\01.REO.exe");
 		    Thread.sleep(2000);
 		    WebElement element2 = driver.findElement(sendBtn);
