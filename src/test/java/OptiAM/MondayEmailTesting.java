@@ -31,6 +31,7 @@ public class MondayEmailTesting {
 	By Program = By.xpath("//select[@id='LoanProgram21']");
 	By Status = By.xpath("//select[@id='LoanStatus2']");
 	By PrincipalAmt = By.xpath("//input[@id='OrigPrinAmt11']");
+	By LoanBalance = By.xpath("//input[@id='TotalLoanBalance']");
 
 	
 	public void DcamCaseWizard() throws InterruptedException {
