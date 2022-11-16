@@ -45,12 +45,12 @@ public class MondayEmailTesting {
 		driver.findElement(CaseWizard).click();
 		Thread.sleep(5000);
 		driver.findElement(CaseNumberBox).sendKeys(CaseNumber);
-		WebElement ProgramSelection = driver.findElement(LoanProgram);
+		WebElement ProgramSelection = driver.findElement(Program);
 	    Select ProgramSelect = new Select(ProgramSelection);
-	    ProgramSelect.selectByValue("Generic Debt");
+	    ProgramSelect.selectByVisibleText("Generic Debt");
 	    WebElement StatusSelection = driver.findElement(Status);
 	    Select StatusSelect = new Select(StatusSelection);
-	    StatusSelect.selectByValue("Assigned");
+	    StatusSelect.selectByVisibleText("Assigned");
 	    driver.findElement(PrincipalAmt).sendKeys("2000");
 	}
 
