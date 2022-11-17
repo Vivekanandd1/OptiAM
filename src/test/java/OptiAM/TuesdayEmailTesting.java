@@ -44,6 +44,7 @@ public class TuesdayEmailTesting {
 	By CloseBtn2 = By.xpath("(//button[@class='close'])[2]");
 	By UserObjectMaintenance = By.xpath("(//a[normalize-space()='User Object Maintenance'])[1]");
 	By UserWindowControlMaintenance = By.xpath("(//a[normalize-space()='User Window Control Maintenance'])[1]");
+    By ExclusionUserWindowMaintenance=  By.xpath("(//a[normalize-space()='Exclusion User Window Maintenance'])[1]");
 	
 	public void UserWindowsMaintenance() throws InterruptedException {
 		driver.findElement(More).click();
@@ -179,10 +180,6 @@ public class TuesdayEmailTesting {
 				}
 		 driver.findElement(AttachBtn).click();
 		 driver.findElement(CloseBtn2).click();
-//		 executor.executeScript("window.scrollBy(0,-450)");
-//		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
-//		 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
-//		 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 		 try{driver.findElement(EditBtn).click();}
 		 catch (ElementClickInterceptedException e) {
 			 WebElement Ele = driver.findElement(EditBtn);
@@ -199,7 +196,10 @@ public class TuesdayEmailTesting {
 					}
 		 driver.findElement(DetachBtn).click();
 		 driver.findElement(CloseBtn1).click();
-		 Thread.sleep(3000);
+		 Thread.sleep(3000);	
+	}
+	
+	public void ExclusionUserWindowMaintenance() {
 		
 	}
 	   
