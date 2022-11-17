@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -28,6 +29,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 
 public class StepDefs {
 	WebDriver driver;
+	WebDriverWait wait;
 	Login_Page login_page;
 	SearchScreens searchscreens;
 	NewMessaging Newmessaging;
@@ -43,13 +45,14 @@ public class StepDefs {
 	  	driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(100));
 	  	driver.manage().deleteAllCookies();
 	  	driver.manage().deleteAllCookies();
+	    wait = new WebDriverWait(driver, Duration.ofSeconds(10000000));
 		login_page  = new Login_Page(driver);
 		searchscreens = new SearchScreens(driver);
 		Newmessaging = new NewMessaging(driver);
 		Caseborading = new CaseBoarding(driver);
 		oldMessaging = new OldMessaging(driver);
 		caseWizard = new CaseWizard(driver);
-		monemailTesting = new MondayEmailTesting(driver);
+		monemailTesting = new MondayEmailTesting(driver, wait);
 	}
 		
 	
@@ -128,9 +131,12 @@ public class StepDefs {
      
      @Test(priority = 6)
      public void MondayEmailTesting() throws InterruptedException, IOException {
-    	 //monemailTesting.DcamCaseWizard();
+    	 monemailTesting.DcamCaseWizard();
     	 monemailTesting.CambuBatchRun();
+    	 monemailTesting.StartsScheduler();
      }
+     
+     
 	
 	@AfterTest
 	public void User_Logout() throws InterruptedException {

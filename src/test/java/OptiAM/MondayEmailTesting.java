@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -18,12 +19,13 @@ public class MondayEmailTesting {
 	WebDriverWait wait;
 	JavascriptExecutor executor;
 	
-	public MondayEmailTesting(WebDriver driver) {
+	public MondayEmailTesting(WebDriver driver,WebDriverWait wait) {
 		this.driver = driver;
+		this.wait = wait;
 		executor = (JavascriptExecutor)driver;
 	}
 	
-	String CaseNumber = "8899000376";
+	String CaseNumber = "8899000386";
 	By LoanProgram = By.xpath("//a[@title='Loan Program']");
 	By DcamBtn = By.xpath("//label[@for='DCAMS']");
 	By Servicing = By.xpath("(//li[@class='nav-item dropdown'])[1]");
@@ -95,9 +97,24 @@ public class MondayEmailTesting {
 	By CambuUpload = By.xpath("//a[@href='#/BatchExcelUpload_CAMBU']");
 	By ChooseFile = By.xpath("//input[@id='selectFile']");
 	By UploadFile = By.xpath("//input[@value='Upload File']");
+	By Usda_Btn = By.id("OptiAM USDA");
+	By More = By.xpath("//a[normalize-space()='More']");
+	By BulkUploadService = By.xpath("//a[normalize-space()='Bulk Upload Service']");
+	By BulkDocumentUploadScheduler = By.xpath("//a[@href='#/BulkDocumentUploadScheduler']");
+	By StopSchedular = By.xpath("//button[@ng-click='stopSchedular()']");
+	By StartSchedular = By.xpath("//button[@ng-click='startSchedular()']");
+	By SystemAdmin =  By.xpath("//a[normalize-space()='System Admin']");
+	By SubSystemAdmin = By.xpath("//a[normalize-space()='Sub-System Admin']");
+	By SPSSystemAdmin = By.xpath("//a[normalize-space()='SPS-System Admin']");	
+	By FhaslSystemAdmin = By.xpath("//a[normalize-space()='CORE-GL-System Admin']");
+	By HiatsInSystemAdmin = By.xpath("//a[normalize-space()='HIATS_IN-System Admin']");
+	By HiatsOutSystemAdmin = By.xpath("//a[normalize-space()='HIATS_OUT-System Admin']");
+	By GL_SystemAdmin = By.xpath("//a[normalize-space()='GL-System Admin']");
+	By GL_Scheduler = By.xpath("(//a[normalize-space()='Scheduler'])[1]");
+	By GL_Scheduler1 = By.xpath("(//a[normalize-space()='GL Email Scheduler'])[1]");
 	
 	public void DcamCaseWizard() throws InterruptedException {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10000000));
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10000000));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
 		driver.findElement(LoanProgram).click();
 		driver.findElement(DcamBtn).click();
@@ -118,19 +135,28 @@ public class MondayEmailTesting {
 			executor.executeScript("arguments[0].click();", element1);
 		}
 		driver.findElement(CaseWizard).click();
-		Thread.sleep(5000);
+		Thread.sleep(5000);/*in case of 54 just comment out this sleep*/
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(CaseNumberBox));
+		wait.until(ExpectedConditions.presenceOfElementLocated(CaseNumberBox));
+		wait.until(ExpectedConditions.elementToBeClickable(CaseNumberBox));
 		driver.findElement(CaseNumberBox).sendKeys(CaseNumber);
 		WebElement ProgramSelection = driver.findElement(Program);
 	    Select ProgramSelect = new Select(ProgramSelection);
 	    ProgramSelect.selectByVisibleText("Generic Debt");
-	    Thread.sleep(2000);
+//	    Thread.sleep(2000);
+	    wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Status));
+		wait.until(ExpectedConditions.presenceOfElementLocated(Status));
+		wait.until(ExpectedConditions.elementToBeClickable(Status));
 	    WebElement StatusSelection = driver.findElement(Status);
 	    Select StatusSelect = new Select(StatusSelection);
 	    StatusSelect.selectByVisibleText("Assigned");
 	    driver.findElement(PrincipalAmt).sendKeys("2000");
 	    driver.findElement(LoanBalance).sendKeys("100");
-	    
-	    wait.until(ExpectedConditions.elementToBeClickable(TransferDate));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(TransferDate));
+		wait.until(ExpectedConditions.presenceOfElementLocated(TransferDate));
+		wait.until(ExpectedConditions.elementToBeClickable(TransferDate));
+		wait.until(ExpectedConditions.elementToBeClickable(TransferDate));
+	  
 	    driver.findElement(TransferDate).click();
 		WebElement MonthSelection = driver.findElement(Month);
 		Select MonthSelect = new Select(MonthSelection);
@@ -247,9 +273,15 @@ public class MondayEmailTesting {
 		driver.findElement(InitialDebtAmount).sendKeys("200");
 		driver.findElement(FirstFormSaveBtn).click();
 		
-		Thread.sleep(5000);	
+//		Thread.sleep(5000);	
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AddContact));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(AddContact));
+		 wait.until(ExpectedConditions.elementToBeClickable(AddContact));
 		driver.findElement(AddContact).click();
-	    Thread.sleep(5000);
+//	    Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ContactType));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(ContactType));
+		 wait.until(ExpectedConditions.elementToBeClickable(ContactType));
 		
 		/*Borrower Page */
 		WebElement ContactSelection = driver.findElement(ContactType);
@@ -300,10 +332,31 @@ public class MondayEmailTesting {
 			driver.findElement(NextFormBtn3).click();
 			Thread.sleep(2000);
 			driver.findElement(AddCaseBtn).click();
-			Thread.sleep(30000);
+//			Thread.sleep(25000);
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LoanProgram));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(LoanProgram));
+			 wait.until(ExpectedConditions.elementToBeClickable(LoanProgram));
+			
 	}
 	
 	public void CambuBatchRun() throws IOException, InterruptedException {
+           try {
+				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LoanProgram));
+				 wait.until(ExpectedConditions.presenceOfElementLocated(LoanProgram));
+				 wait.until(ExpectedConditions.elementToBeClickable(LoanProgram));
+			    driver.findElement(LoanProgram).click();
+			    }
+				catch (ElementClickInterceptedException e) {
+					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LoanProgram));
+					wait.until(ExpectedConditions.presenceOfElementLocated(LoanProgram));
+					wait.until(ExpectedConditions.elementToBeClickable(LoanProgram));
+					Thread.sleep(7000);
+					WebElement element1 = driver.findElement(LoanProgram);
+					System.out.println("Excutor needed");
+					executor.executeScript("arguments[0].click();", element1);
+				}
+		driver.findElement(Usda_Btn).click();
+		Thread.sleep(5000);
 		driver.findElement(Accounting).click();
 		driver.findElement(Cambu).click();
 		driver.findElement(CambuUpload).click();
@@ -315,7 +368,103 @@ public class MondayEmailTesting {
 		 Thread.sleep(1000);
 		 WebElement element2 = driver.findElement(UploadFile);
 			executor.executeScript("arguments[0].click();", element2);
-			Thread.sleep(5000);
+			Thread.sleep(6000);
+	}
+	
+	public void StartsScheduler() throws InterruptedException {
+		/*Bulk Document Scheduler*/
+		driver.findElement(More).click();
+		driver.findElement(BulkUploadService).click();
+		driver.findElement(BulkDocumentUploadScheduler).click();
+		Thread.sleep(4000);
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
+		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
+		 driver.findElement(StopSchedular).click();
+		 Thread.sleep(2000);
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
+			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
+		 driver.findElement(StartSchedular).click();
+		 Thread.sleep(4000);
+		 /*GL Monitor Service Scheduler*/
+		 driver.findElement(More).click();
+		 driver.findElement(SystemAdmin).click();
+		 driver.findElement(SubSystemAdmin).click();
+		 driver.findElement(GL_SystemAdmin).click();
+		  driver.findElement(GL_Scheduler).click();
+		 driver.findElement(GL_Scheduler1).click();
+		 Thread.sleep(2000);
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
+		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
+		 driver.findElement(StopSchedular).click();
+		 Thread.sleep(2000);
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
+			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
+		 driver.findElement(StartSchedular).click();
+		 Thread.sleep(4000);	
+		 /*SPS Monitor Service Scheduler*/
+		 driver.findElement(More).click();
+		 driver.findElement(SystemAdmin).click();
+		 driver.findElement(SubSystemAdmin).click();
+		 driver.findElement(SPSSystemAdmin).click();
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
+		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
+		 driver.findElement(StopSchedular).click();
+		 Thread.sleep(2000);
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
+			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
+		 driver.findElement(StartSchedular).click();
+		 Thread.sleep(4000);	
+		 /*Fhasl Monitor Service Scheduler*/
+		 driver.findElement(More).click();
+		 driver.findElement(SystemAdmin).click();
+		 driver.findElement(SubSystemAdmin).click();
+		 driver.findElement(FhaslSystemAdmin).click();
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
+		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
+		 driver.findElement(StopSchedular).click();
+		 Thread.sleep(2000);
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
+			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
+		 driver.findElement(StartSchedular).click();
+		 Thread.sleep(4000);
+		 /*HiatsIn Monitor Service Scheduler*/
+		 driver.findElement(More).click();
+		 driver.findElement(SystemAdmin).click();
+		 driver.findElement(SubSystemAdmin).click();
+		 driver.findElement(HiatsInSystemAdmin).click();
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
+		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
+		 driver.findElement(StopSchedular).click();
+		 Thread.sleep(2000);
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
+			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
+		 driver.findElement(StartSchedular).click();
+		 Thread.sleep(4000);
+		 /*HiatsOut Monitor Service Scheduler*/
+		 driver.findElement(More).click();
+		 driver.findElement(SystemAdmin).click();
+		 driver.findElement(SubSystemAdmin).click();
+		 driver.findElement(HiatsOutSystemAdmin).click();
+		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
+		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
+		 driver.findElement(StopSchedular).click();
+		 Thread.sleep(2000);
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
+			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
+		 driver.findElement(StartSchedular).click();
+		 Thread.sleep(4000);	
 	}
 
 }
