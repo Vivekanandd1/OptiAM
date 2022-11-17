@@ -36,9 +36,9 @@ public class Login_Page  {
 	By LogOut = By.xpath("//a[@ng-click='logout()']");
 	
 	
-	public Login_Page(WebDriver driver) {
+	public Login_Page(WebDriver driver,WebDriverWait wait) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(30000));
+		this.wait=wait;
 	}
 
 //   @BeforeTest

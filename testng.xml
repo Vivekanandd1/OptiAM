@@ -13,8 +13,9 @@
       <include name="SearchScreens"></include>
         <include name="NewMessagingSubSystem"></include>
         <include name="OldMessaging"></include>
-        <include name="CaseByCaseWizard"></include> -->
-     <include name="MondayEmailTesting"></include>
+        <include name="CaseByCaseWizard"></include> 
+     <include name="MondayEmailTesting"></include>-->
+      <include name="TuesdaySEmailTesting"></include>
       </methods>
       </class>
     </classes> 

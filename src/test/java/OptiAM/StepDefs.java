@@ -37,6 +37,7 @@ public class StepDefs {
 	OldMessaging oldMessaging;
 	CaseWizard caseWizard;
 	MondayEmailTesting monemailTesting;
+	TuesdayEmailTesting tuesdayEmailTesting;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -46,13 +47,14 @@ public class StepDefs {
 	  	driver.manage().deleteAllCookies();
 	  	driver.manage().deleteAllCookies();
 	    wait = new WebDriverWait(driver, Duration.ofSeconds(10000000));
-		login_page  = new Login_Page(driver);
+		login_page  = new Login_Page(driver,wait);
 		searchscreens = new SearchScreens(driver);
 		Newmessaging = new NewMessaging(driver);
 		Caseborading = new CaseBoarding(driver);
 		oldMessaging = new OldMessaging(driver);
 		caseWizard = new CaseWizard(driver);
 		monemailTesting = new MondayEmailTesting(driver, wait);
+		tuesdayEmailTesting = new TuesdayEmailTesting(driver, wait);
 	}
 		
 	
@@ -136,7 +138,12 @@ public class StepDefs {
     	 monemailTesting.StartsScheduler();
      }
      
-     
+     @Test(priority = 7)
+     public void TuesdaySEmailTesting() throws InterruptedException, IOException {
+//    	 tuesdayEmailTesting.UserWindowsMaintenance();
+//    	 tuesdayEmailTesting.UserObjectMaintenance();
+    	 tuesdayEmailTesting.UserWindowControlMaintenance();
+     }  
 	
 	@AfterTest
 	public void User_Logout() throws InterruptedException {
