@@ -32,6 +32,7 @@ public class TuesdayEmailTesting {
 	By UnconnctBtnWindows = By.xpath("//button[normalize-space()='Unconnected User to Windows']");
 	By UnconnctBtnObject = By.xpath("//button[normalize-space()='Unconnected User to Objects']");
 	By UnconnctGroupUser = By.xpath("//button[normalize-space()='Unconnected Groups to User']");
+	By UnconnctGroupRoles = By.xpath("//button[normalize-space()='Unconnected Groups to Roles']");
 	By UnconnctUserWindowMaintenance = By.xpath("//button[normalize-space()='Unconnected User to Window.Controls']");
 	By UnconnctExclusionControl = By.xpath("//button[normalize-space()='Unconnected User to Control']");
 	By UnconnctUserPIIExclusion = By.xpath("//button[normalize-space()='Unconnected User to Window.PII']");
@@ -67,6 +68,43 @@ public class TuesdayEmailTesting {
     By ExclusionUserControlMaintenance = By.xpath("(//a[normalize-space()='Exclusion User Control Maintenance'])[1]");
     By ExclusionUserPIIMaintenance = By.xpath("(//a[normalize-space()='Exclusion User PII Maintenance'])[1]");
     By GroupUserMaintenance = By.xpath("(//a[normalize-space()='Group User Maintenance'])[1]");
+    By GroupRoleMaintenance = By.xpath("//a[normalize-space()='Group Role Maintenance']");
+    By AddBtn = By.xpath("//button[normalize-space()='Add']");
+    By FirstName = By.xpath("//input[@id='FirstName']");
+    By LastName = By.xpath("//input[@id='LastName']");
+    By LoginId = By.xpath("//input[@id='Login ID']");
+    By EmailID = By.xpath("//input[@id='EmailId']");
+    By Status = By.xpath("//select[@id='Status']");
+    By AccountType = By.xpath("//select[@id='Account Type']");
+    By UserRole = By.xpath("//select[@ng-model='usrRoleid']");
+    By UserAddBtn = By.xpath("//input[@value='Add']");
+    By SuperAdmin_AdminMaintenance = By.xpath("//a[normalize-space()='SuperAdmin/Admin Maintenance']");
+    
+    public void UserAddition() throws InterruptedException {
+    	driver.findElement(More).click();
+		driver.findElement(SystemAdmin).click();
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AddBtn));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(AddBtn));
+		 wait.until(ExpectedConditions.elementToBeClickable(AddBtn));
+		driver.findElement(AddBtn).click();
+		driver.findElement(FirstName).sendKeys("Vivek");
+		driver.findElement(LastName).sendKeys("Tamrkar");
+		driver.findElement(LoginId).sendKeys("VivekTestID");
+		driver.findElement(EmailID).sendKeys("vivektamrakar888@gmail.com");
+		WebElement StatusSelection = driver.findElement(Status);
+		Select StatusSelect = new Select(StatusSelection);
+		StatusSelect.selectByVisibleText("Active");
+		WebElement AccountSelection = driver.findElement(AccountType);
+		Select AccountSelect = new Select(AccountSelection);
+		AccountSelect.selectByVisibleText("Permanent");
+		WebElement RoleSelection = driver.findElement(UserRole);
+		Select RoleSelect = new Select(RoleSelection);
+		RoleSelect.selectByVisibleText("SuperAdmin");	
+		driver.findElement(UserAddBtn).click();
+	    Thread.sleep(2000);
+	    driver.findElement(CloseBtn1).click();
+	    Thread.sleep(2000);
+    }
 	
 	public void UserWindowsMaintenance() throws InterruptedException {
 		driver.findElement(More).click();
@@ -671,7 +709,74 @@ public class TuesdayEmailTesting {
 				} 
 			 driver.findElement(DetachBtn).click();
 			 driver.findElement(CloseBtn2).click();
-			 Thread.sleep(5000);	      	   
-		   
+			 Thread.sleep(5000);	      	      
+	   }
+	   
+	   public void GroupRoleMaintenance() throws InterruptedException {
+		   driver.findElement(More).click();
+				driver.findElement(SystemAdmin).click();
+				driver.findElement(Group).click();
+				driver.findElement(GroupRoleMaintenance).click();
+				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctGroupRoles));
+				 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctGroupRoles));
+				 wait.until(ExpectedConditions.elementToBeClickable(UnconnctGroupRoles));
+				 try {
+					 executor.executeScript("window.scrollBy(0,400)");
+				driver.findElement(UnconnctGroupRoles).click();
+				}
+				 catch (ElementClickInterceptedException e) {
+					 executor.executeScript("window.scrollBy(0,400)");
+					 WebElement element2 = driver.findElement(UnconnctGroupRoles);
+					 System.out.println("Excutor needed");
+					    executor.executeScript("arguments[0].click();", element2);
+				}
+				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SelectGroup));
+				 wait.until(ExpectedConditions.presenceOfElementLocated(SelectGroup));
+				 wait.until(ExpectedConditions.elementToBeClickable(SelectGroup));
+				WebElement UserSelection = driver.findElement(SelectGroup);
+				Select UserSelect = new Select(UserSelection);
+				UserSelect.selectByValue("0");
+				List<WebElement> Checkboxes = driver.findElements(CheckBox);
+				int i=0;
+				for (i=0;i<Checkboxes.size();) {
+					 Checkboxes.get(i).click();
+					if(i==3) {
+						break;
+					}
+					i++;
+				}
+				 driver.findElement(AttachBtn).click();
+				 driver.findElement(CloseBtn3).click();
+				 Thread.sleep(3000);/*have to keep this wait as page getting refreshed*/
+					 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtnGroup));
+					 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtnGroup));
+					 wait.until(ExpectedConditions.elementToBeClickable(EditBtnGroup));
+					 driver.findElement(EditBtnGroup).click();
+					 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedGroupBox));
+					 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedGroupBox));
+					 wait.until(ExpectedConditions.elementToBeClickable(AttachedGroupBox));
+				 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedGroupBox);
+					int j=0;
+					for (j=0;j<WindowControlAttachedBoxes.size();) {
+						WindowControlAttachedBoxes.get(j).click();
+						if(j==3) {
+							break;
+						}
+						j++;
+					} 
+				 driver.findElement(DetachBtn).click();
+				 driver.findElement(CloseBtn2).click();
+				 Thread.sleep(5000);
+	   }
+	   
+	   public void UserRoleChange() {
+		   driver.findElement(More).click();
+			driver.findElement(SystemAdmin).click();
+			driver.findElement(User).click();
+			driver.findElement(SuperAdmin_AdminMaintenance).click();
+			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
+			 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
+			driver.findElement(EditBtn).click();
 	   }
 }

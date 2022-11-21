@@ -140,17 +140,19 @@ public class StepDefs {
      
      @Test(priority = 7)
      public void TuesdaySEmailTesting() throws InterruptedException, IOException {
-    	 tuesdayEmailTesting.UserWindowsMaintenance();
-    	 tuesdayEmailTesting.UserObjectMaintenance();
-    	 tuesdayEmailTesting.UserWindowControlMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserWindowMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserWindowControlMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserWindowPIIMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserObjectMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserSubObjectMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserControlMaintenance();
-    	 tuesdayEmailTesting.ExclusionUserPIIMaintenance();
-    	 tuesdayEmailTesting.GroupUserMaintenance();
+    	 tuesdayEmailTesting.UserAddition();
+//    	 tuesdayEmailTesting.UserWindowsMaintenance();
+//    	 tuesdayEmailTesting.UserObjectMaintenance();
+//    	 tuesdayEmailTesting.UserWindowControlMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserWindowMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserWindowControlMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserWindowPIIMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserObjectMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserSubObjectMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserControlMaintenance();
+//    	 tuesdayEmailTesting.ExclusionUserPIIMaintenance();
+//    	 tuesdayEmailTesting.GroupUserMaintenance();
+//    	 tuesdayEmailTesting.GroupRoleMaintenance();
      }  
 	
 	@AfterTest
