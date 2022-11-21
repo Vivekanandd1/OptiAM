@@ -157,9 +157,11 @@ public class StepDefs {
 //    	 tuesdayEmailTesting.UserDeletion();
      }  
      
-     @Test(priority = 7)
+     @Test(priority = 8)
      public void UsdaCoreFunctionalities() throws InterruptedException, IOException {
-    	 usdaCoreFunctionalities.USDASPSBatchRun();
+ //   	 usdaCoreFunctionalities.USDASPSBatchRun();
+//    	 usdaCoreFunctionalities.USDAFhaslBatchRun();
+    	 usdaCoreFunctionalities.CambuBatchRun();
      }
      
 	@AfterTest

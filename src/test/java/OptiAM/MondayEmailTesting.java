@@ -119,14 +119,14 @@ public class MondayEmailTesting {
 		driver.findElement(LoanProgram).click();
 		driver.findElement(DcamBtn).click();
 		try {
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Servicing));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Servicing));
 		wait.until(ExpectedConditions.presenceOfElementLocated(Servicing));
 		wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 		Thread.sleep(7000);
 	    driver.findElement(Servicing).click();
 	    }
 		catch (StaleElementReferenceException e) {
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Servicing));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(Servicing));
 			wait.until(ExpectedConditions.presenceOfElementLocated(Servicing));
 			wait.until(ExpectedConditions.elementToBeClickable(Servicing));
 			Thread.sleep(7000);
@@ -136,7 +136,7 @@ public class MondayEmailTesting {
 		}
 		driver.findElement(CaseWizard).click();
 		Thread.sleep(5000);/*in case of 54 just comment out this sleep*/
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(CaseNumberBox));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(CaseNumberBox));
 		wait.until(ExpectedConditions.presenceOfElementLocated(CaseNumberBox));
 		wait.until(ExpectedConditions.elementToBeClickable(CaseNumberBox));
 		driver.findElement(CaseNumberBox).sendKeys(CaseNumber);
@@ -144,7 +144,7 @@ public class MondayEmailTesting {
 	    Select ProgramSelect = new Select(ProgramSelection);
 	    ProgramSelect.selectByVisibleText("Generic Debt");
 //	    Thread.sleep(2000);
-	    wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(Status));
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(Status));
 		wait.until(ExpectedConditions.presenceOfElementLocated(Status));
 		wait.until(ExpectedConditions.elementToBeClickable(Status));
 	    WebElement StatusSelection = driver.findElement(Status);
@@ -274,12 +274,12 @@ public class MondayEmailTesting {
 		driver.findElement(FirstFormSaveBtn).click();
 		
 //		Thread.sleep(5000);	
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AddContact));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(AddContact));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(AddContact));
 		 wait.until(ExpectedConditions.elementToBeClickable(AddContact));
 		driver.findElement(AddContact).click();
 //	    Thread.sleep(5000);
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ContactType));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(ContactType));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(ContactType));
 		 wait.until(ExpectedConditions.elementToBeClickable(ContactType));
 		
@@ -333,7 +333,7 @@ public class MondayEmailTesting {
 			Thread.sleep(2000);
 			driver.findElement(AddCaseBtn).click();
 //			Thread.sleep(25000);
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LoanProgram));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(LoanProgram));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(LoanProgram));
 			 wait.until(ExpectedConditions.elementToBeClickable(LoanProgram));
 			
@@ -341,13 +341,13 @@ public class MondayEmailTesting {
 	
 	public void CambuBatchRun() throws IOException, InterruptedException {
            try {
-				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LoanProgram));
+				wait.until(ExpectedConditions.visibilityOfElementLocated(LoanProgram));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(LoanProgram));
 				 wait.until(ExpectedConditions.elementToBeClickable(LoanProgram));
 			    driver.findElement(LoanProgram).click();
 			    }
 				catch (ElementClickInterceptedException e) {
-					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(LoanProgram));
+					wait.until(ExpectedConditions.visibilityOfElementLocated(LoanProgram));
 					wait.until(ExpectedConditions.presenceOfElementLocated(LoanProgram));
 					wait.until(ExpectedConditions.elementToBeClickable(LoanProgram));
 					Thread.sleep(7000);
@@ -377,12 +377,12 @@ public class MondayEmailTesting {
 		driver.findElement(BulkUploadService).click();
 		driver.findElement(BulkDocumentUploadScheduler).click();
 		Thread.sleep(4000);
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
 		 driver.findElement(StopSchedular).click();
 		 Thread.sleep(2000);
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
 		 driver.findElement(StartSchedular).click();
@@ -395,12 +395,12 @@ public class MondayEmailTesting {
 		  driver.findElement(GL_Scheduler).click();
 		 driver.findElement(GL_Scheduler1).click();
 		 Thread.sleep(2000);
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
 		 driver.findElement(StopSchedular).click();
 		 Thread.sleep(2000);
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
 		 driver.findElement(StartSchedular).click();
@@ -410,12 +410,12 @@ public class MondayEmailTesting {
 		 driver.findElement(SystemAdmin).click();
 		 driver.findElement(SubSystemAdmin).click();
 		 driver.findElement(SPSSystemAdmin).click();
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
 		 driver.findElement(StopSchedular).click();
 		 Thread.sleep(2000);
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
 		 driver.findElement(StartSchedular).click();
@@ -425,12 +425,12 @@ public class MondayEmailTesting {
 		 driver.findElement(SystemAdmin).click();
 		 driver.findElement(SubSystemAdmin).click();
 		 driver.findElement(FhaslSystemAdmin).click();
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
 		 driver.findElement(StopSchedular).click();
 		 Thread.sleep(2000);
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
 		 driver.findElement(StartSchedular).click();
@@ -440,12 +440,12 @@ public class MondayEmailTesting {
 		 driver.findElement(SystemAdmin).click();
 		 driver.findElement(SubSystemAdmin).click();
 		 driver.findElement(HiatsInSystemAdmin).click();
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
 		 driver.findElement(StopSchedular).click();
 		 Thread.sleep(2000);
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
 		 driver.findElement(StartSchedular).click();
@@ -455,12 +455,12 @@ public class MondayEmailTesting {
 		 driver.findElement(SystemAdmin).click();
 		 driver.findElement(SubSystemAdmin).click();
 		 driver.findElement(HiatsOutSystemAdmin).click();
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StopSchedular));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(StopSchedular));
 		 wait.until(ExpectedConditions.elementToBeClickable(StopSchedular));
 		 driver.findElement(StopSchedular).click();
 		 Thread.sleep(2000);
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(StartSchedular));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(StartSchedular));
 			 wait.until(ExpectedConditions.elementToBeClickable(StartSchedular));
 		 driver.findElement(StartSchedular).click();
