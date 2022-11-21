@@ -6,8 +6,10 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +19,7 @@ public class TuesdayEmailTesting {
 	WebDriver driver;
 	WebDriverWait wait;
 	JavascriptExecutor executor;
+	Actions build;
 	
 	public TuesdayEmailTesting(WebDriver driver,WebDriverWait wait){
 		this.driver=driver;
@@ -58,6 +61,7 @@ public class TuesdayEmailTesting {
 	By DetachBtn = By.xpath("//button[@ng-click='btndetach()']");
 	By CloseBtn2 = By.xpath("(//button[@class='close'])[2]");
 	By CloseBtn3 = By.xpath("(//button[@class='close'])[3]");
+	By CloseBtn4 = By.xpath("(//button[@class='close'])[6]");
 	By UserObjectMaintenance = By.xpath("(//a[normalize-space()='User Object Maintenance'])[1]");
 	By UserWindowControlMaintenance = By.xpath("(//a[normalize-space()='User Window Control Maintenance'])[1]");
     By ExclusionUserWindowMaintenance=  By.xpath("(//a[normalize-space()='Exclusion User Window Maintenance'])[1]");
@@ -71,7 +75,7 @@ public class TuesdayEmailTesting {
     By GroupRoleMaintenance = By.xpath("//a[normalize-space()='Group Role Maintenance']");
     By AddBtn = By.xpath("//button[normalize-space()='Add']");
     By FirstName = By.xpath("//input[@id='FirstName']");
-    By LastName = By.xpath("//input[@id='LastName']");
+    By LastName = By.xpath("(//input[@ng-model='lastName'])[1]");
     By LoginId = By.xpath("//input[@id='Login ID']");
     By EmailID = By.xpath("//input[@id='EmailId']");
     By Status = By.xpath("//select[@id='Status']");
@@ -79,15 +83,23 @@ public class TuesdayEmailTesting {
     By UserRole = By.xpath("//select[@ng-model='usrRoleid']");
     By UserAddBtn = By.xpath("//input[@value='Add']");
     By SuperAdmin_AdminMaintenance = By.xpath("//a[normalize-space()='SuperAdmin/Admin Maintenance']");
+    By RoleChange = By.xpath("(//select[@ng-model='uriRoleId'])[2]");
+    By RoleChangeBtn = By.xpath("//button[normalize-space()='Change Role']");
+    By UserBox = By.xpath("(//input[@type='checkbox'])[1]");
+    By DeleteBtn = By.xpath("//button[@ng-click='delData()']");
+    By SubmitBtn = By.xpath("//button[@ng-click='SubmitDelete()']");
     
     public void UserAddition() throws InterruptedException {
     	driver.findElement(More).click();
 		driver.findElement(SystemAdmin).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AddBtn));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(AddBtn));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(AddBtn));
 		 wait.until(ExpectedConditions.elementToBeClickable(AddBtn));
 		driver.findElement(AddBtn).click();
 		driver.findElement(FirstName).sendKeys("Vivek");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(LastName));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(LastName));
+		 wait.until(ExpectedConditions.elementToBeClickable(LastName));
 		driver.findElement(LastName).sendKeys("Tamrkar");
 		driver.findElement(LoginId).sendKeys("VivekTestID");
 		driver.findElement(EmailID).sendKeys("vivektamrakar888@gmail.com");
@@ -111,7 +123,7 @@ public class TuesdayEmailTesting {
 		driver.findElement(SystemAdmin).click();
 		driver.findElement(User).click();
 		driver.findElement(UserWindowMaintenance).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctBtnWindows));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctBtnWindows));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctBtnWindows));
 		 wait.until(ExpectedConditions.elementToBeClickable(UnconnctBtnWindows));
 		 try {
@@ -124,7 +136,7 @@ public class TuesdayEmailTesting {
 			 System.out.println("Excutor needed");
 			    executor.executeScript("arguments[0].click();", element2);
 		}
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SelectUser));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(SelectUser));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(SelectUser));
 		 wait.until(ExpectedConditions.elementToBeClickable(SelectUser));
 		WebElement UserSelection = driver.findElement(SelectUser);
@@ -141,6 +153,9 @@ public class TuesdayEmailTesting {
 				}
 		 driver.findElement(AttachBtn).click();
 		 driver.findElement(CloseBtn1).click();
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
+		 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
+		 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 		 driver.findElement(EditBtn).click();
 		 List<WebElement> Attachedboxes = driver.findElements(AttachedBox);
 			int j=0;
@@ -160,7 +175,7 @@ public class TuesdayEmailTesting {
 		driver.findElement(SystemAdmin).click();
 		driver.findElement(User).click();
 		driver.findElement(UserObjectMaintenance).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctBtnObject));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctBtnObject));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctBtnObject));
 		 wait.until(ExpectedConditions.elementToBeClickable(UnconnctBtnObject));
 		 try {
@@ -173,7 +188,7 @@ public class TuesdayEmailTesting {
 			 System.out.println("Excutor needed");
 			    executor.executeScript("arguments[0].click();", element2);
 		}
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ObjectUserName));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(ObjectUserName));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(ObjectUserName));
 		 wait.until(ExpectedConditions.elementToBeClickable(ObjectUserName));
 		WebElement UserSelection = driver.findElement(ObjectUserName);
@@ -210,7 +225,7 @@ public class TuesdayEmailTesting {
 		driver.findElement(SystemAdmin).click();
 		driver.findElement(User).click();
 		driver.findElement(UserWindowControlMaintenance).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctUserWindowMaintenance));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctUserWindowMaintenance));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctUserWindowMaintenance));
 		 wait.until(ExpectedConditions.elementToBeClickable(UnconnctUserWindowMaintenance));
 		 try {
@@ -223,7 +238,7 @@ public class TuesdayEmailTesting {
 			 System.out.println("Excutor needed");
 			    executor.executeScript("arguments[0].click();", element2);
 		}
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(WindowControlUserName));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(WindowControlUserName));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(WindowControlUserName));
 		 wait.until(ExpectedConditions.elementToBeClickable(WindowControlUserName));
 		WebElement UserSelection = driver.findElement(WindowControlUserName);
@@ -264,7 +279,7 @@ public class TuesdayEmailTesting {
 		driver.findElement(SystemAdmin).click();
 		driver.findElement(User).click();
 		driver.findElement(ExclusionUserWindowMaintenance).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctBtnWindows));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctBtnWindows));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctBtnWindows));
 		 wait.until(ExpectedConditions.elementToBeClickable(UnconnctBtnWindows));
 		 try {
@@ -277,7 +292,7 @@ public class TuesdayEmailTesting {
 			 System.out.println("Excutor needed");
 			    executor.executeScript("arguments[0].click();", element2);
 		}
-		 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowUsername));
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowUsername));
 		 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowUsername));
 		 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowUsername));
 		WebElement UserSelection = driver.findElement(ExclusionWindowUsername);
@@ -295,11 +310,11 @@ public class TuesdayEmailTesting {
 		 driver.findElement(AttachBtn).click();
 		 driver.findElement(CloseBtn1).click();
 		 Thread.sleep(5000);/*have to keep this wait as page getting refreshed*/
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 			 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 			 driver.findElement(EditBtn).click();
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedBox));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedBox));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedBox));
 			 wait.until(ExpectedConditions.elementToBeClickable(AttachedBox));
 		 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedBox);
@@ -320,7 +335,7 @@ public class TuesdayEmailTesting {
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(User).click();
 			driver.findElement(ExclusionUserWindowControlMaintenance).click();
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctUserWindowMaintenance));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctUserWindowMaintenance));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctUserWindowMaintenance));
 			 wait.until(ExpectedConditions.elementToBeClickable(UnconnctUserWindowMaintenance));
 			 try {
@@ -333,7 +348,7 @@ public class TuesdayEmailTesting {
 				 System.out.println("Excutor needed");
 				    executor.executeScript("arguments[0].click();", element2);
 			}
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowControlUserName));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowControlUserName));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowControlUserName));
 			 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowControlUserName));
 			WebElement UserSelection = driver.findElement(ExclusionWindowControlUserName);
@@ -351,7 +366,7 @@ public class TuesdayEmailTesting {
 			 driver.findElement(AttachBtn).click();
 			 driver.findElement(CloseBtn2).click();
 			 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 				 driver.findElement(EditBtn).click();
@@ -374,7 +389,7 @@ public class TuesdayEmailTesting {
 					driver.findElement(SystemAdmin).click();
 					driver.findElement(User).click();
 					driver.findElement(ExclusionUserWindowPIIMaintenance).click();
-					wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctUserPIIExclusion));
+					wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctUserPIIExclusion));
 					 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctUserPIIExclusion));
 					 wait.until(ExpectedConditions.elementToBeClickable(UnconnctUserPIIExclusion));
 					 try {
@@ -387,7 +402,7 @@ public class TuesdayEmailTesting {
 						 System.out.println("Excutor needed");
 						    executor.executeScript("arguments[0].click();", element2);
 					}
-					 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowControlUserName));
+					 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowControlUserName));
 					 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowControlUserName));
 					 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowControlUserName));
 					WebElement UserSelection = driver.findElement(ExclusionWindowControlUserName);
@@ -405,11 +420,11 @@ public class TuesdayEmailTesting {
 					 driver.findElement(AttachBtn).click();
 					 driver.findElement(CloseBtn2).click();
 					 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-						 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+						 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 						 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 						 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 						 driver.findElement(EditBtn).click();
-						 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowControlAttachedBox));
+						 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowControlAttachedBox));
 						 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowControlAttachedBox));
 						 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowControlAttachedBox));
 					 List<WebElement> WindowControlAttachedBoxes = driver.findElements(ExclusionWindowControlAttachedBox);
@@ -431,7 +446,7 @@ public class TuesdayEmailTesting {
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(User).click();
 			driver.findElement(ExclusionUserObjectMaintenance).click();
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctUserObjectBtn));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctUserObjectBtn));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctUserObjectBtn));
 			 wait.until(ExpectedConditions.elementToBeClickable(UnconnctUserObjectBtn));
 			 try {
@@ -444,7 +459,7 @@ public class TuesdayEmailTesting {
 				 System.out.println("Excutor needed");
 				    executor.executeScript("arguments[0].click();", element2);
 			}
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowUsername));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowUsername));
 			WebElement UserSelection = driver.findElement(ExclusionWindowUsername);
@@ -462,11 +477,11 @@ public class TuesdayEmailTesting {
 			 driver.findElement(AttachBtn).click();
 			 driver.findElement(CloseBtn1).click();
 			 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 				 driver.findElement(EditBtn).click();
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedBox));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedBox));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedBox));
 				 wait.until(ExpectedConditions.elementToBeClickable(AttachedBox));
 			 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedBox);
@@ -488,7 +503,7 @@ public class TuesdayEmailTesting {
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(User).click();
 			driver.findElement(ExclusionUserSubObjectMaintenance).click();
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctSubObject));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctSubObject));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctSubObject));
 			 wait.until(ExpectedConditions.elementToBeClickable(UnconnctSubObject));
 			 try {
@@ -501,7 +516,7 @@ public class TuesdayEmailTesting {
 				 System.out.println("Excutor needed");
 				    executor.executeScript("arguments[0].click();", element2);
 			}
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowUsername));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowUsername));
 			WebElement UserSelection = driver.findElement(ExclusionWindowUsername);
@@ -519,11 +534,11 @@ public class TuesdayEmailTesting {
 			 driver.findElement(AttachBtn).click();
 			 driver.findElement(CloseBtn1).click();
 			 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 				 driver.findElement(EditBtn).click();
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedBox));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedBox));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedBox));
 				 wait.until(ExpectedConditions.elementToBeClickable(AttachedBox));
 			 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedBox);
@@ -545,7 +560,7 @@ public class TuesdayEmailTesting {
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(User).click();
 			driver.findElement(ExclusionUserControlMaintenance).click();
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctExclusionControl));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctExclusionControl));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctExclusionControl));
 			 wait.until(ExpectedConditions.elementToBeClickable(UnconnctExclusionControl));
 			 try {
@@ -558,7 +573,7 @@ public class TuesdayEmailTesting {
 				 System.out.println("Excutor needed");
 				    executor.executeScript("arguments[0].click();", element2);
 			}
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowUsername));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowUsername));
 			WebElement UserSelection = driver.findElement(ExclusionWindowUsername);
@@ -576,11 +591,11 @@ public class TuesdayEmailTesting {
 			 driver.findElement(AttachBtn).click();
 			 driver.findElement(CloseBtn1).click();
 			 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 				 driver.findElement(EditBtn).click();
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedBox));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedBox));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedBox));
 				 wait.until(ExpectedConditions.elementToBeClickable(AttachedBox));
 			 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedBox);
@@ -602,7 +617,7 @@ public class TuesdayEmailTesting {
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(User).click();
 			driver.findElement(ExclusionUserPIIMaintenance).click();
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctUserUserPIIExclusion));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctUserUserPIIExclusion));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctUserUserPIIExclusion));
 			 wait.until(ExpectedConditions.elementToBeClickable(UnconnctUserUserPIIExclusion));
 			 try {
@@ -615,7 +630,7 @@ public class TuesdayEmailTesting {
 				 System.out.println("Excutor needed");
 				    executor.executeScript("arguments[0].click();", element2);
 			}
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(ExclusionWindowUsername));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(ExclusionWindowUsername));
 			 wait.until(ExpectedConditions.elementToBeClickable(ExclusionWindowUsername));
 			WebElement UserSelection = driver.findElement(ExclusionWindowUsername);
@@ -633,11 +648,11 @@ public class TuesdayEmailTesting {
 			 driver.findElement(AttachBtn).click();
 			 driver.findElement(CloseBtn1).click();
 			 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 				 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
 				 driver.findElement(EditBtn).click();
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedPIIBox));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedPIIBox));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedPIIBox));
 				 wait.until(ExpectedConditions.elementToBeClickable(AttachedPIIBox));
 			 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedPIIBox);
@@ -659,7 +674,7 @@ public class TuesdayEmailTesting {
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(Group).click();
 			driver.findElement(GroupUserMaintenance).click();
-			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctGroupUser));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctGroupUser));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctGroupUser));
 			 wait.until(ExpectedConditions.elementToBeClickable(UnconnctGroupUser));
 			 try {
@@ -672,7 +687,7 @@ public class TuesdayEmailTesting {
 				 System.out.println("Excutor needed");
 				    executor.executeScript("arguments[0].click();", element2);
 			}
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SelectGroup));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(SelectGroup));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(SelectGroup));
 			 wait.until(ExpectedConditions.elementToBeClickable(SelectGroup));
 			WebElement UserSelection = driver.findElement(SelectGroup);
@@ -690,12 +705,12 @@ public class TuesdayEmailTesting {
 			 driver.findElement(AttachBtn).click();
 			 driver.findElement(CloseBtn3).click();
 //			 Thread.sleep(7000);/*have to keep this wait as page getting refreshed*/
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtnGroup));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtnGroup));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtnGroup));
 				 wait.until(ExpectedConditions.elementToBeClickable(EditBtnGroup));
 				 driver.findElement(EditBtnGroup).click();
 				 Thread.sleep(7000);
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedGroupBox));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedGroupBox));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedGroupBox));
 				 wait.until(ExpectedConditions.elementToBeClickable(AttachedGroupBox));
 			 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedGroupBox);
@@ -717,7 +732,7 @@ public class TuesdayEmailTesting {
 				driver.findElement(SystemAdmin).click();
 				driver.findElement(Group).click();
 				driver.findElement(GroupRoleMaintenance).click();
-				wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(UnconnctGroupRoles));
+				wait.until(ExpectedConditions.visibilityOfElementLocated(UnconnctGroupRoles));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(UnconnctGroupRoles));
 				 wait.until(ExpectedConditions.elementToBeClickable(UnconnctGroupRoles));
 				 try {
@@ -730,7 +745,7 @@ public class TuesdayEmailTesting {
 					 System.out.println("Excutor needed");
 					    executor.executeScript("arguments[0].click();", element2);
 				}
-				 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(SelectGroup));
+				 wait.until(ExpectedConditions.visibilityOfElementLocated(SelectGroup));
 				 wait.until(ExpectedConditions.presenceOfElementLocated(SelectGroup));
 				 wait.until(ExpectedConditions.elementToBeClickable(SelectGroup));
 				WebElement UserSelection = driver.findElement(SelectGroup);
@@ -748,11 +763,11 @@ public class TuesdayEmailTesting {
 				 driver.findElement(AttachBtn).click();
 				 driver.findElement(CloseBtn3).click();
 				 Thread.sleep(3000);/*have to keep this wait as page getting refreshed*/
-					 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtnGroup));
+					 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtnGroup));
 					 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtnGroup));
 					 wait.until(ExpectedConditions.elementToBeClickable(EditBtnGroup));
 					 driver.findElement(EditBtnGroup).click();
-					 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(AttachedGroupBox));
+					 wait.until(ExpectedConditions.visibilityOfElementLocated(AttachedGroupBox));
 					 wait.until(ExpectedConditions.presenceOfElementLocated(AttachedGroupBox));
 					 wait.until(ExpectedConditions.elementToBeClickable(AttachedGroupBox));
 				 List<WebElement> WindowControlAttachedBoxes = driver.findElements(AttachedGroupBox);
@@ -769,14 +784,37 @@ public class TuesdayEmailTesting {
 				 Thread.sleep(5000);
 	   }
 	   
-	   public void UserRoleChange() {
+	   public void UserRoleChange() throws InterruptedException {
 		   driver.findElement(More).click();
 			driver.findElement(SystemAdmin).click();
 			driver.findElement(User).click();
 			driver.findElement(SuperAdmin_AdminMaintenance).click();
-			 wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(EditBtn));
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(EditBtn));
 			 wait.until(ExpectedConditions.presenceOfElementLocated(EditBtn));
 			 wait.until(ExpectedConditions.elementToBeClickable(EditBtn));
-			driver.findElement(EditBtn).click();
+//			 wait.until(ExpectedConditions.vi)
+			try{driver.findElement(EditBtn).click();}
+			catch (StaleElementReferenceException e) {
+				driver.findElement(EditBtn).click();
+			}
+			WebElement RoleSelection = driver.findElement(RoleChange);
+			Select RoleSelect  = new Select(RoleSelection);
+			RoleSelect.selectByVisibleText("Admin");
+			driver.findElement(RoleChangeBtn).click();
+			Thread.sleep(5000);
+		 }
+	   
+	   public void UserDeletion() throws InterruptedException {
+		   build = new Actions(driver);
+		   driver.findElement(More).click();
+			driver.findElement(SystemAdmin).click();
+			 wait.until(ExpectedConditions.visibilityOfElementLocated(UserBox));
+			 wait.until(ExpectedConditions.presenceOfElementLocated(UserBox));
+			 wait.until(ExpectedConditions.elementToBeClickable(UserBox));
+			driver.findElement(UserBox).click();
+			driver.findElement(DeleteBtn).click();
+			Thread.sleep(2000);
+            driver.findElement(SubmitBtn).click();
+			Thread.sleep(5000);
 	   }
 }

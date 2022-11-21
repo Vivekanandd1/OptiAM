@@ -14,6 +14,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,9 +22,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 
 
 
@@ -38,6 +36,7 @@ public class StepDefs {
 	CaseWizard caseWizard;
 	MondayEmailTesting monemailTesting;
 	TuesdayEmailTesting tuesdayEmailTesting;
+	UsdaCoreFunctionalities usdaCoreFunctionalities;
 	
 	@BeforeTest
 	public void setUp() throws Throwable{
@@ -55,6 +54,7 @@ public class StepDefs {
 		caseWizard = new CaseWizard(driver);
 		monemailTesting = new MondayEmailTesting(driver, wait);
 		tuesdayEmailTesting = new TuesdayEmailTesting(driver, wait);
+		usdaCoreFunctionalities = new UsdaCoreFunctionalities(driver, wait);
 	}
 		
 	
@@ -140,7 +140,7 @@ public class StepDefs {
      
      @Test(priority = 7)
      public void TuesdaySEmailTesting() throws InterruptedException, IOException {
-    	 tuesdayEmailTesting.UserAddition();
+//    	 tuesdayEmailTesting.UserAddition();
 //    	 tuesdayEmailTesting.UserWindowsMaintenance();
 //    	 tuesdayEmailTesting.UserObjectMaintenance();
 //    	 tuesdayEmailTesting.UserWindowControlMaintenance();
@@ -153,8 +153,15 @@ public class StepDefs {
 //    	 tuesdayEmailTesting.ExclusionUserPIIMaintenance();
 //    	 tuesdayEmailTesting.GroupUserMaintenance();
 //    	 tuesdayEmailTesting.GroupRoleMaintenance();
+//    	 tuesdayEmailTesting.UserRoleChange();
+//    	 tuesdayEmailTesting.UserDeletion();
      }  
-	
+     
+     @Test(priority = 7)
+     public void UsdaCoreFunctionalities() throws InterruptedException, IOException {
+    	 usdaCoreFunctionalities.USDASPSBatchRun();
+     }
+     
 	@AfterTest
 	public void User_Logout() throws InterruptedException {
 		login_page.LogOut();

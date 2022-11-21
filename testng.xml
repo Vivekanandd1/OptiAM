@@ -14,8 +14,9 @@
         <include name="NewMessagingSubSystem"></include>
         <include name="OldMessaging"></include>
         <include name="CaseByCaseWizard"></include> 
-     <include name="MondayEmailTesting"></include>-->
-      <include name="TuesdaySEmailTesting"></include>
+     <include name="MondayEmailTesting"></include>
+      <include name="TuesdaySEmailTesting"></include>-->
+      <include name="UsdaCoreFunctionalities"></include>
       </methods>
       </class>
     </classes> 
